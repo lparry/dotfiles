@@ -29,6 +29,8 @@ export EDITOR=vim
 #add ssh known hosts to auto completion
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
+alias rake_autocompletion='complete -W "$(echo `rake -T| cut -f 2 -d " "|uniq`;)" rake'
+
 # function for git branch in prompt
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
