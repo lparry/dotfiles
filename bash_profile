@@ -29,6 +29,27 @@ export EDITOR=vim
 #add ssh known hosts to auto completion
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
+# function for git branch in prompt
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+ 
+function proml {
+  local BLUE="\[\033[0;34m\]"
+  local RED="\[\033[0;31m\]"
+  local LIGHT_RED="\[\033[1;31m\]"
+  local GREEN="\[\033[0;32m\]"
+  local YELLOW="\[\033[0;33m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local WHITE="\[\033[0;39m\]"
+  local LIGHT_GRAY="\[\033[0;37m\]"
+  local BLINK_GREEN="\[\033[5;32m\]"
+ 
+  PS1="$GREEN\h $YELLOW\w$WHITE \$(parse_git_branch)\n\$ $WHITE"
+}
+proml
+
+
 if [ -f "$HOME/.git-completion" ] ; then
   source $HOME/.git-completion
 fi
