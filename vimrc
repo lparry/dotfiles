@@ -64,6 +64,7 @@ highlight StatusLine cterm=none ctermbg=darkred
 
 autocmd! BufRead,BufNewFile *.inf	set filetype=text
 autocmd BufRead *.thtml set filetype=php
+autocmd BufRead .bash_local set syntax=config
 
 " stops vim jumping down multiple lines when in wrap mode
 nnoremap j gj
