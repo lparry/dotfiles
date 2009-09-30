@@ -31,7 +31,7 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 
 #rake autocompletion function - run in the directory containing your rakefile
 function rake_autocompletion {
-  complete -W "$(echo `rake -T| cut -f 2 -d ' '|uniq`;)" rake
+  complete -W "$(echo `rake -T| sed s/\(in[^\)]*\)//| cut -f 2 -d ' '|uniq`;)" rake
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
