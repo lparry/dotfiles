@@ -35,6 +35,15 @@ function rake_autocompletion {
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
+cd () {
+  command cd "$@";
+  # Add enhanced completion for a folder containing a rails app 
+  if [ -f ./Rakefile ]; then
+    rake_autocompletion 
+  fi
+}
+
+
 # function for git branch in prompt
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
