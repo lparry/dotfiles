@@ -12,7 +12,7 @@ alias ll='ls -FGl'
 alias la='ls -aFGl'
 alias h='history'
 alias hg='history|grep'
-alias g='grep'
+#alias g='grep'
 alias cp='cp -v'
 alias df='df -H'
 alias du='du -H'
@@ -39,7 +39,7 @@ function rake_autocompletion {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
- 
+
 function proml {
   local BLUE="\[\033[0;34m\]"
   local RED="\[\033[0;31m\]"
@@ -56,8 +56,8 @@ function proml {
 proml
 
 
-if [ -f "$HOME/.git-completion" ] ; then
-  source $HOME/.git-completion
+if [ -f "$HOME/dotfiles/git-completion" ] ; then
+  source $HOME/dotfiles/git-completion
 fi
 
 if [ -f "$HOME/.bash_local" ] ; then
