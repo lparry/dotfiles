@@ -101,7 +101,10 @@ set cursorcolumn
 set cursorline
 hi cursorcolumn ctermbg=red
 
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
+colorscheme koehler 
 
 " Short explanation of each option:      *option-list*
 " |'aleph'|       |'al'|       ASCII code of the letter Aleph (Hebrew)
@@ -495,4 +498,3 @@ set tabstop=2
 " |'writeany'|        |'wa'|       write to file with no need for "!" override
 " |'writebackup'|   |'wb'|       make a backup before overwriting a file
 " |'writedelay'|    |'wd'|       delay this many msec for each char (for debug)
-
