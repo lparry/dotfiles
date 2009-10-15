@@ -101,8 +101,9 @@ set cursorcolumn
 set cursorline
 hi cursorcolumn ctermbg=red
 
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+autocmd VimEnter * NERDTree "open NERDTree when vim opens
+autocmd VimEnter * set nocursorcolumn "turn off the cursorcolumn in the nerdtree pane that is now selected
+autocmd VimEnter * wincmd p "change to the main pane
 
 colorscheme koehler 
 
