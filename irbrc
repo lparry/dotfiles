@@ -19,3 +19,7 @@ class Object
     self.methods.select {|m| m =~ regex}
   end
 end
+
+def methods_not_from_object(obj)
+  obj.methods - Object.methods
+end
