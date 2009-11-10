@@ -18,14 +18,14 @@ alias df='df -H'
 alias du='du -H'
 alias rm='rm -i'
 alias vi='vim'
-alias top="top -L"
 alias gitc="git commit -av"
+alias mma='cd ~/dev/marketplace && mate app config db features spec compass Rakefile README Capfile lib vendor/plugins stories'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export TERM=xterm-color
 export EDITOR=vim
-export IRBRC=~/.irbrc
+export IRBRC="/Users/lparry/.irbrc"
 
 #add ssh known hosts to auto completion
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
@@ -36,11 +36,21 @@ function rake_autocompletion {
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
+#capistrano autocompletion function - run in the directory containing your capfiles
+function cap_autocompletion {
+  complete -W "$(echo `cap -T|sed 's/Some tasks were not listed.*//;s/or because they are only.*//;s/tasks, type.*//;s/Extended help may be.*//;s/Type \`cap -e taskname.*//'| cut -f 2 -d ' '|uniq`;)" cap
+  COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
+}
+
+
 cd () {
   command cd "$@";
   # Add enhanced completion for a folder containing a rails app 
   if [ -f ./Rakefile ]; then
     rake_autocompletion 
+  fi
+  if [ -f ./Capfile ]; then
+    cap_autocompletion 
   fi
 }
 

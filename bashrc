@@ -6,3 +6,4 @@
 if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
+export IRBRC="/Users/lparry/.irbrc"

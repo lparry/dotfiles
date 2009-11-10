@@ -11,7 +11,14 @@ IRB.conf[:AUTO_INDENT]=true
 #load wirble
 Wirble.init
 Wirble.colorize
- 
+
+def debug_active_record(to_stdio = true) 
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  ActiveRecord::Base.logger.level = to_stdio ? Logger::DEBUG : Logger::WARN
+
+  reload!
+end
+
 require 'utility_belt'
  
 class Object
