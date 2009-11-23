@@ -16,9 +16,16 @@ alias hg='history|grep'
 alias cp='cp -v'
 alias df='df -H'
 alias du='du -H'
+alias ep='vim ~/.bash_profile; . ~/.bash_profile'
 alias rm='rm -i'
 alias vi='vim'
-alias gitc="git commit -av"
+
+#git
+alias gc="git commit -av"
+alias gs="git status"
+alias gd="git diff"
+alias gpr="git pull --rebase"
+
 alias mma='cd ~/dev/marketplace && mate app config db features spec compass Rakefile README Capfile lib vendor/plugins stories'
 
 export CLICOLOR=1
@@ -32,7 +39,10 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 
 #rake autocompletion function - run in the directory containing your rakefile
 function rake_autocompletion {
-  complete -W "$(echo `rake -T| sed s/\(in[^\)]*\)//| cut -f 2 -d ' '|uniq`;)" rake
+  rake_options="$(echo `rake -T| sed s/\(in[^\)]*\)//| cut -f 2 -d ' '|uniq`;)"
+#  specs="$(echo `find .|sed 's/\.\///'`)"
+  completion="$rake_options $files_and_shit"
+  complete -W "$completion" rake
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
