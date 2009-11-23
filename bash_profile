@@ -48,7 +48,7 @@ function rake_autocompletion {
 #capistrano autocompletion function - run in the directory containing your capfiles
 function cap_autocompletion {
   cap_options="$(echo `cap -T|sed 's/Some tasks were not listed.*//;s/or because they are only.*//;s/tasks, type.*//;s/Extended help may be.*//;s/Type \`cap -e taskname.*//'| cut -f 2 -d ' '|uniq`;)"
-  complete -o bashdefault -o default -o nospace -W "$cap_options" rake
+  complete -o bashdefault -o default -o nospace -W "$cap_options" cap
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
