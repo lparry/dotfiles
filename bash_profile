@@ -41,15 +41,14 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 #rake autocompletion function - run in the directory containing your rakefile
 function rake_autocompletion {
   rake_options="$(echo `rake -T| sed s/\(in[^\)]*\)//| cut -f 2 -d ' '|uniq`;)"
-#  specs="$(echo `find .|sed 's/\.\///'`)"
-  completion="$rake_options $files_and_shit"
-  complete -W "$completion" rake
+  complete -o bashdefault -o default -o nospace -W "$rake_options" rake
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
 #capistrano autocompletion function - run in the directory containing your capfiles
 function cap_autocompletion {
-  complete -W "$(echo `cap -T|sed 's/Some tasks were not listed.*//;s/or because they are only.*//;s/tasks, type.*//;s/Extended help may be.*//;s/Type \`cap -e taskname.*//'| cut -f 2 -d ' '|uniq`;)" cap
+  cap_options="$(echo `cap -T|sed 's/Some tasks were not listed.*//;s/or because they are only.*//;s/tasks, type.*//;s/Extended help may be.*//;s/Type \`cap -e taskname.*//'| cut -f 2 -d ' '|uniq`;)"
+  complete -o bashdefault -o default -o nospace -W "$cap_options" rake
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
