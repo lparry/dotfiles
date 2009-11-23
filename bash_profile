@@ -24,6 +24,7 @@ alias vi='vim'
 alias gc="git commit -av"
 alias g="git status"
 alias gd="git diff"
+alias gp="git push"
 alias gpr="git pull --rebase"
 
 alias mma='cd ~/dev/marketplace && mate app config db features spec compass Rakefile README Capfile lib vendor/plugins stories'
