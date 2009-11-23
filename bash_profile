@@ -22,7 +22,7 @@ alias vi='vim'
 
 #git
 alias gc="git commit -av"
-alias gs="git status"
+alias g="git status"
 alias gd="git diff"
 alias gpr="git pull --rebase"
 
@@ -55,6 +55,7 @@ function cap_autocompletion {
 
 cd () {
   command cd "$@";
+  command ls
   # Add enhanced completion for a folder containing a rails app 
   if [ -f ./Rakefile ]; then
     rake_autocompletion 
