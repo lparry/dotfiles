@@ -27,7 +27,7 @@
   ignored = "!git ls-files --others --exclude-standard"
   delete = !sh -c 'git branch -D "$0" && git push origin ":$0"'
   st = status
-  pr = pull --rebase
+  pr = pull
   cav = commit -a -v
   co = checkout
 [merge]

@@ -24,8 +24,8 @@ alias vi='vim'
 alias gc="git commit -av"
 alias g="git status"
 alias gd="git diff"
-alias gp="git push"
-alias gpr="git pull --rebase"
+alias gpush="git push"
+alias gp="git pull"
 
 alias mma='cd ~/dev/marketplace && mate app config db features spec compass Rakefile README Capfile lib vendor/plugins stories'
 
@@ -40,16 +40,39 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 
 #rake autocompletion function - run in the directory containing your rakefile
 function rake_autocompletion {
-  rake_options="$(echo `rake -T| sed s/\(in[^\)]*\)//| cut -f 2 -d ' '|uniq`;)"
+  completion_path="$HOME/.completion-cache`pwd`"
+  rake_cache_file="$completion_path/rake_completion"
+
+  if [ -f $rake_cache_file ]; then
+    rake_options=`cat $rake_cache_file`
+  else
+    rake_options="$(echo `rake -T| sed s/\(in[^\)]*\)//| cut -f 2 -d ' '|uniq`;)"
+    mkdir -p $completion_path
+    echo $rake_options > "$rake_cache_file"
+  fi
+
   complete -o bashdefault -o default -o nospace -W "$rake_options" rake
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
 }
 
 #capistrano autocompletion function - run in the directory containing your capfiles
 function cap_autocompletion {
-  cap_options="$(echo `cap -T|sed 's/Some tasks were not listed.*//;s/or because they are only.*//;s/tasks, type.*//;s/Extended help may be.*//;s/Type \`cap -e taskname.*//'| cut -f 2 -d ' '|uniq`;)"
+  completion_path="$HOME/.completion-cache`pwd`"
+  cap_cache_file="$completion_path/cap_completion"
+
+  if [ -f $cap_cache_file ]; then
+    cap_options=`cat $cap_cache_file`
+  else
+    cap_options="$(echo `cap -T|sed 's/Some tasks were not listed.*//;s/or because they are only.*//;s/tasks, type.*//;s/Extended help may be.*//;s/Type \`cap -e taskname.*//'| cut -f 2 -d ' '|uniq`;)"
+    mkdir -p $completion_path
+    echo $cap_options > "$cap_cache_file"
+  fi
   complete -o bashdefault -o default -o nospace -W "$cap_options" cap
   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
+}
+
+function clear_completion_caches {
+  rm -rf "$home/.completion_cache" 
 }
 
 
