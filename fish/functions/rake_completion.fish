@@ -3,10 +3,9 @@ function rake_completion
   set -l rake_cache_file $completion_path/rake_completion
   
   if test -f $rake_cache_file
-    echo "file exists"
     set -l rake_options (cat $rake_cache_file)
   else
-    echo "file doesnt exist"
+    echo "Generating rake completions..."
     set -l rake_options (rake -T| sed 's/(in[^)]*)//'| cut -f 2 -d ' '|uniq)
     mkdir -p $completion_path
 
