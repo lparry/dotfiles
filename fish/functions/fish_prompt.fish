@@ -23,7 +23,7 @@ function fish_prompt --description 'Write out the prompt'
 	set -l duration $CMD_DURATION
 	set -l pr_duration (test -n "$duration"; and gecho "-> $duration\n")
 	set -l pr_term (test $TERM = 'screen'; and gecho "[screen/$WINDOW] ")
-	set -l pr_cwd (prompt_pwd)
+	set -l pr_cwd (prompt_pwd | sed 's/^\/V\/D\/U\/lparry/\~/;s/^\/V\/D\/U\/l/\~/')
 	set -l status_pwd (test $previous_status -eq 0; and gecho "$Green:) $pr_cwd$White"; or gecho "$Red:( $pr_cwd$White")
 	set -l pr_git_info (git_cwd_info)
 	gecho -e "$LightGrey$pr_duration$pr_term$LightGreen$status_pwd$Yellow$pr_git_info$White\n$LightCyan⚡$White "
