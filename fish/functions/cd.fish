@@ -25,6 +25,9 @@ function cd --description 'Change directory'
           if test -f 'Rakefile'
             rake_completion
           end
+          if test -f 'Capfile'
+            cap_completion
+          end
           if test $status = 0
             ls
           end
