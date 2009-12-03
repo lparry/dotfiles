@@ -22,16 +22,17 @@ function cd --description 'Change directory'
           echo "changing to $argv[1]"
           set -g OLDPWD $PWD
           builtin cd $argv[1]
+          set -l cd_status $status
           if test -f 'Rakefile'
             rake_completion
           end
           if test -f 'Capfile'
             cap_completion
           end
-          if test $status = 0
+          if test $cd_status = 0
             ls
           end
-          return $status
+          return $cd_status
         end
       end
     end
