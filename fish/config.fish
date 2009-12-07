@@ -71,7 +71,6 @@ if test (hostname -s) = 'macbook'
 end
 
 if test (hostname -s) = 'lucas-parrys-imac'
-  echo "work config"
   prefix_path ~/bin
   prefix_path /opt/local/bin
   prefix_path /usr/local/mysql/bin
@@ -81,5 +80,4 @@ if test (hostname -s) = 'lucas-parrys-imac'
   set -x MY_RUBY_HOME /Users/lparry/.rvm/ruby-1.8.6-p383
   set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.6
   set -x RUBY_VERSION 'ruby 1.8.6'
-  
 end

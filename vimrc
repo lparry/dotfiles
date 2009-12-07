@@ -93,6 +93,10 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
 inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
+"makes 'gf' open the file under the cursor in a new tab. I'd prefer a new pane
+"but I'm not sure how to do it yet
+nnoremap gf <C-W>gf
+
 "keyword matching
 "source $VIMRUNTIME/macros/matchit.vim
 
