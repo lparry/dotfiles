@@ -23,12 +23,12 @@ function cd --description 'Change directory'
           set -g OLDPWD $PWD
           builtin cd $argv[1]
           set -l cd_status $status
-          if test -f 'Rakefile'
-            rake_completion
-          end
-          if test -f 'Capfile'
-            cap_completion
-          end
+          # if test -f 'Rakefile'
+          #   rake_completion
+          # end
+          # if test -f 'Capfile'
+          #   cap_completion
+          # end
           if test $cd_status = 0
             ls
           end
