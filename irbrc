@@ -20,11 +20,19 @@ def debug_active_record(to_stdio = true)
 end
 
 require 'utility_belt'
- 
-class Object
-  def search_methods(regex)
-    self.methods.select {|m| m =~ regex}
+def regex_methods 
+  eval <<HERE
+  class Object
+    def methods_with_args(regex=nil)
+      if (regex == nil)
+        methods_without_args
+      else
+        methods_without_args.reject{ |x| not x.match(regex)}
+      end
+    end
+    alias_method_chain :methods, :args
   end
+HERE
 end
 
 def methods_not_from_object(obj)
