@@ -6,15 +6,15 @@ if test (uname -s) = "Darwin"
 end
 
 
-if test -d ~/bin
-  prefix_path ~/bin
+if test -d $HOME/bin
+  prefix_path $HOME/bin
 end
 
 set gems (gem env gemdir)/gems
 #set git_concise_log_format '--pretty=format:%Cblue%h%Creset %cr %Cgreen%an%Creset %s'
 
 if status --is-login
-  for p in /usr/bin /usr/local/bin /opt/local/bin /usr/local/mysql/bin /opt/local/lib/postgresql83/bin ~/bin ~/.config/fish/bin 
+  for p in /usr/bin /usr/local/bin /opt/local/bin /usr/local/mysql/bin /opt/local/lib/postgresql83/bin $HOME/bin $HOME/.config/fish/bin 
     if test -d $p
       set PATH $p $PATH
     end
@@ -71,13 +71,13 @@ if test (hostname -s) = 'macbook'
 end
 
 if test (hostname -s) = 'lucas-parrys-imac'
-  prefix_path ~/bin
+  prefix_path $HOME/bin
   prefix_path /opt/local/bin
   prefix_path /usr/local/mysql/bin
-  prefix_path ~/.rvm/bin/
-  prefix_path ~/.gem/ruby/1.8/bin
-  prefix_path ~/.rvm/ruby-1.8.6-p383/bin
-  prefix_path ~/.rvm/gems/ruby/1.8.6/bin/
+  prefix_path $HOME/.rvm/bin/
+  prefix_path $HOME/.gem/ruby/1.8/bin
+  prefix_path $HOME/.rvm/ruby-1.8.6-p383/bin
+  prefix_path $HOME/.rvm/gems/ruby/1.8.6/bin/
   set -x MY_RUBY_HOME /Users/lparry/.rvm/ruby-1.8.6-p383
   set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.6
   set -x RUBY_VERSION 'ruby 1.8.6'

@@ -1,5 +1,5 @@
 function __cache_or_get_cap_completion -d "Create cap completions"
-  set -l cap_cache_dir "~/tmp/cap_completion_cache"
+  set -l cap_cache_dir "$HOME/tmp/cap_completion_cache"
   mkdir -p "$cap_cache_dir"
   set -l hashed_pwd (md5 -q -s (pwd))
   set -l cap_cache_file "$cap_cache_dir/$hashed_pwd"

@@ -1,5 +1,5 @@
 function __cache_or_get_rake_completion -d "Create rake completions"
-  set -l rake_cache_dir "~/tmp/rake_completion_cache"
+  set -l rake_cache_dir "$HOME/tmp/rake_completion_cache"
   mkdir -p "$rake_cache_dir"
   set -l hashed_pwd (md5 -q -s (pwd))
   set -l rake_cache_file "$rake_cache_dir/$hashed_pwd"
