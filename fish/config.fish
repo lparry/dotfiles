@@ -77,6 +77,7 @@ if test (hostname -s) = 'lucas-parrys-imac'
   prefix_path ~/.rvm/bin/
   prefix_path ~/.gem/ruby/1.8/bin
   prefix_path ~/.rvm/ruby-1.8.6-p383/bin
+  prefix_path ~/.rvm/gems/ruby/1.8.6/bin/
   set -x MY_RUBY_HOME /Users/lparry/.rvm/ruby-1.8.6-p383
   set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.6
   set -x RUBY_VERSION 'ruby 1.8.6'
