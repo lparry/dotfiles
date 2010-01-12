@@ -26,5 +26,5 @@ function fish_prompt --description 'Write out the prompt'
 	set -l pr_cwd (prompt_pwd | sed 's/^\/V\/D\/U\/lparry/\~/;s/^\/V\/D\/U\/l/\~/')
 	set -l status_pwd (test $previous_status -eq 0; and gecho "$Green:) $pr_cwd$White"; or gecho "$Red:( $pr_cwd$White")
 	set -l pr_git_info (git_cwd_info)
-	gecho -e "$LightGrey$pr_duration$pr_term$LightGreen$status_pwd$Yellow$pr_git_info$White\n$LightCyan⚡$White "
+	gecho -e "\n$LightGrey$pr_duration$pr_term$LightGreen$status_pwd$Yellow$pr_git_info$White\n$LightCyan⚡$White "
 end

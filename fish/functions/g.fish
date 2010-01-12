@@ -1,5 +1,10 @@
 function g
-	git status
-	true
+	if test $argv[1]
+		git $argv
+	else
+		git status
+		true
+	end
+
 
 end
