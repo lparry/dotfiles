@@ -38,3 +38,27 @@ end
 def methods_not_from_object(obj)
   obj.methods - Object.methods
 end
+
+class Fixnum
+  def columnize(width=5)
+    self.to_s.ljust width
+  end
+end
+
+class NilClass
+  def columnize(width=25)
+    ' '.ljust width
+  end
+end
+
+class String
+  def columnize(width=25)
+    if size <= width
+      ljust(width)
+    else
+      part1=part2=(width-3)/2
+      part1 += 1 if width%2 == 0
+      "#{self[0...part1]}...#{self[-part2...size]}"
+    end
+  end
+end
