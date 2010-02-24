@@ -19,7 +19,8 @@ hi cursorcolumn ctermbg=red
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -34,6 +35,9 @@ setlocal spell spelllang=en_au
 :map <F5> :setlocal spell! spelllang=en_au<cr>
 :imap <F5> <ESC>:setlocal spell! spelllang=en_au<cr>
 
+map <C-n> :cn
+map <C-p> :cp
+
 "ctrl + a/e to move to end/start of lines
 :map <C-a> 0
 :map <C-e> $
@@ -45,9 +49,11 @@ setlocal spell spelllang=en_au
 "maximize windows
 :map _ <c-w>_
 
-" colon commands (must start with capital letters
+" colon commands (must start with capital letters sadly)
 command W write 
 command Q quit  " compensate for my sloppy typing
+command WQ write | quit 
+command QW write | quit 
 
 " auto correct/abbreviations
 ab teh the
@@ -99,7 +105,7 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set backup " keep backup file after overwriting a file
 set backupdir=~/tmp/vim " list of directories for the backup file
 
-
+" Use Ack instead of grep
 
 " tabs
 set expandtab " use spaces when <Tab> is inserted
@@ -108,7 +114,16 @@ set softtabstop=2
 set tabstop=2
 
 
-"set tags=tags;/
+set tags=./tags;
+
+
+
+let mapleader = ","
+
+"find out who to blame for the current highlighted lines
+vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+
 "set foldenable " set to display all folds open
 "set history=500
 "set diffopt=icase,iwhite,context:4,filler
