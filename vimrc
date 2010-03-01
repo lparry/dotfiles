@@ -53,6 +53,7 @@ map <C-p> :cp
 command W write 
 command Q quit  " compensate for my sloppy typing
 command WQ write | quit 
+command Wq write | quit 
 command QW write | quit 
 
 " auto correct/abbreviations
@@ -75,19 +76,23 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
 " helpful tab completion
-function! InsertTabWrapper(direction)
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    elseif "backward" == a:direction
-        return "\<c-p>"
-    else
-        return "\<c-n>"
-    endif
-endfunction
+" function! InsertTabWrapper(direction)
+"     let col = col('.') - 1
+"     if !col || getline('.')[col - 1] !~ '\k'
+"         return "\<tab>"
+"     elseif "backward" == a:direction
+"         return "\<c-p>"
+"     else
+"         return "\<c-n>"
+"     endif
+" endfunction
+" 
+" inoremap <tab> <c-r>=InsertTabWrapper("forward")<cr>
+" inoremap <s-tab> <c-r>=InsertTabWrapper("backward")<cr>
 
-inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
-inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
+function TidyWhiteSpace()
+  %s/\s*$//
+endfunction
 
 " makes gf always open in a new pane
 nnoremap gf <C-W>f 
@@ -122,6 +127,7 @@ let mapleader = ","
 
 "find out who to blame for the current highlighted lines
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+map <Leader>w :call TidyWhiteSpace()<CR>
 
 
 "set foldenable " set to display all folds open

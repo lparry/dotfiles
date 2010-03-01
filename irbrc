@@ -12,9 +12,9 @@ IRB.conf[:AUTO_INDENT]=true
 Wirble.init
 Wirble.colorize
 
-def debug_active_record(to_stdio = true) 
+def debug_active_record(debug_messages = true) 
   ActiveRecord::Base.logger = Logger.new(STDOUT)
-  ActiveRecord::Base.logger.level = to_stdio ? Logger::DEBUG : Logger::WARN
+  ActiveRecord::Base.logger.level = debug_messages ? Logger::DEBUG : Logger::WARN
 
   reload!
 end
