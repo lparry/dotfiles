@@ -129,6 +129,7 @@ let mapleader = ","
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>w :call TidyWhiteSpace()<CR>
 map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> <CR>
+map <Leader>j :vs <C-R>=SpecFileName() <CR> <CR>
 
 
 "set foldenable " set to display all folds open
