@@ -5,7 +5,7 @@ source ~/.vim/autoload/rspec.vim
 " visual stuff
 syntax on
 set background=dark
-colorscheme koehler 
+colorscheme koehler
 set nowrap
 set number " line numbers
 set ruler " show cursor line and column in the status line
@@ -52,11 +52,11 @@ map <C-p> :cp
 :map _ <c-w>_
 
 " colon commands (must start with capital letters sadly)
-command W write 
+command W write
 command Q quit  " compensate for my sloppy typing
-command WQ write | quit 
-command Wq write | quit 
-command QW write | quit 
+command WQ write | quit
+command Wq write | quit
+command QW write | quit
 
 " auto correct/abbreviations
 ab teh the
@@ -88,16 +88,18 @@ inoremap <Up> <C-o>gk
 "         return "\<c-n>"
 "     endif
 " endfunction
-" 
+"
 " inoremap <tab> <c-r>=InsertTabWrapper("forward")<cr>
 " inoremap <s-tab> <c-r>=InsertTabWrapper("backward")<cr>
 
 function! TidyWhiteSpace()
-  %s/\s\+$//
+  if search('\s\+$')
+    :%s/\s\+$//
+  endif
 endfunction
 
 " makes gf always open in a new pane
-nnoremap gf <C-W>f 
+nnoremap gf <C-W>f
 
 " searching
 set ignorecase
