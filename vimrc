@@ -132,7 +132,7 @@ let mapleader = ","
 "find out who to blame for the current highlighted lines
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>w :call TidyWhiteSpace()<CR>
-map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> <CR>
+map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> 2> /dev/null <CR>
 map <Leader>j :vs <C-R>=SpecOrCodeToggle() <CR> <CR>
 
 
