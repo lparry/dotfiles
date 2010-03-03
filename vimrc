@@ -1,5 +1,7 @@
 set nocompatible
 
+source ~/.vim/autoload/rspec.vim
+
 " visual stuff
 syntax on
 set background=dark
@@ -129,7 +131,7 @@ let mapleader = ","
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>w :call TidyWhiteSpace()<CR>
 map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> <CR>
-map <Leader>j :vs <C-R>=SpecFileName() <CR> <CR>
+map <Leader>j :vs <C-R>=SpecOrCodeToggle() <CR> <CR>
 
 
 "set foldenable " set to display all folds open
@@ -142,17 +144,3 @@ map <Leader>j :vs <C-R>=SpecFileName() <CR> <CR>
 "autocmd VimEnter * set nocursorcolumn "turn off the cursorcolumn in the nerdtree pane that is now selected
 "autocmd VimEnter * wincmd p "change to the main pane
 "
-function! SpecFileName()
-  let filename = getreg("%")
-  if filename =~ 'spec/.*_spec\.rb$'
-    return filename
-  elseif filename =~ 'app/.*\.rb$'
-    let filename = substitute(filename, 'app/', "spec/","")
-    return substitute(filename, '.rb$', "_spec.rb","")
-  elseif filename =~ 'lib/.*\.rb$'
-    let filename = substitute(filename, 'lib/', "spec/lib/","")
-    return substitute(filename, '.rb$', "_spec.rb","")
-  else
-    return ""
-  endif
-endfunction
