@@ -90,8 +90,8 @@ inoremap <Up> <C-o>gk
 " inoremap <tab> <c-r>=InsertTabWrapper("forward")<cr>
 " inoremap <s-tab> <c-r>=InsertTabWrapper("backward")<cr>
 
-function TidyWhiteSpace()
-  %s/\s*$//
+function! TidyWhiteSpace()
+  %s/\s\+$//
 endfunction
 
 " makes gf always open in a new pane
@@ -128,6 +128,7 @@ let mapleader = ","
 "find out who to blame for the current highlighted lines
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>w :call TidyWhiteSpace()<CR>
+map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> <CR>
 
 
 "set foldenable " set to display all folds open
@@ -139,3 +140,18 @@ map <Leader>w :call TidyWhiteSpace()<CR>
 "autocmd VimEnter * NERDTree "open NERDTree when vim opens
 "autocmd VimEnter * set nocursorcolumn "turn off the cursorcolumn in the nerdtree pane that is now selected
 "autocmd VimEnter * wincmd p "change to the main pane
+"
+function! SpecFileName()
+  let filename = getreg("%")
+  if filename =~ 'spec/.*_spec\.rb$'
+    return filename
+  elseif filename =~ 'app/.*\.rb$'
+    let filename = substitute(filename, 'app/', "spec/","")
+    return substitute(filename, '.rb$', "_spec.rb","")
+  elseif filename =~ 'lib/.*\.rb$'
+    let filename = substitute(filename, 'lib/', "spec/lib/","")
+    return substitute(filename, '.rb$', "_spec.rb","")
+  else
+    return ""
+  endif
+endfunction
