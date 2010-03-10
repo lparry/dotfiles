@@ -125,16 +125,34 @@ set tabstop=2
 
 set tags=./tags;
 
+set hidden "allow buffers to be hidden without writing to disk
+
+runtime macros/matchit.vim " better pair matching for %
+
+set wildmode=list:longest " better filename completion
+
+
+"make trailing whitespace obvious
+"set listchars=tab:>-,trail:·,eol:$
+set listchars=tab:>-,trail:·
+set nolist!
+
 
 
 let mapleader = ","
 
-"find out who to blame for the current highlighted lines
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>w :call TidyWhiteSpace()<CR>
 map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> 2> /dev/null <CR>
 map <Leader>j :vs <C-R>=SpecOrCodeToggle() <CR> <CR>
 
+"surrounding highlighted strings
+vmap <Leader>q" xi""<esc>hp
+vmap <Leader>q' xi''<esc>hp
+vmap <Leader>q( xi()<esc>hp
+vmap <Leader>q{ xi{}<esc>hp
+vmap <Leader>q[ xi[]<esc>hp
+vmap <Leader>q# xi#{}<esc>hp
 
 "set foldenable " set to display all folds open
 "set history=500
