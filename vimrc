@@ -96,6 +96,9 @@ function! TidyWhiteSpace()
   if search('\s\+$')
     :%s/\s\+$//
   endif
+  if search('\t')
+    :%s/\t/  /g
+  endif
 endfunction
 
 " makes gf always open in a new pane
@@ -153,6 +156,11 @@ vmap <Leader>q( xi()<esc>hp
 vmap <Leader>q{ xi{}<esc>hp
 vmap <Leader>q[ xi[]<esc>hp
 vmap <Leader>q# xi#{}<esc>hp
+
+"replace 'blah' with '"blah: #{blah}"'
+vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
+
+
 
 "set foldenable " set to display all folds open
 "set history=500
