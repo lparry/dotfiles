@@ -32,10 +32,10 @@ function fish_prompt --description 'Write out the prompt'
 #replacing gecho with native printf call to see if prompt fucks up less this way
 #  gecho -e "\n$LightGrey$pr_duration$pr_term$LightGreen$status_pwd$Yellow$pr_git_info$White $time\n$LightCyan⚡$White "
 #:) ~/d/m/spec 1682-attachment-redesign@d65fa20 16:12:14
-#⚡ 
+#⚡
 
-  printf '%s\n%s%s %s%s%s%s %s\n%s⚡ %s' $pr_duration (set_color $status_color) $status_smilie (set_color blue) $pr_cwd (set_color yellow) $pr_git_info (set_color normal) $time (set_color $status_color) (set_color normal)
+  test -n "$duration";
+  and  printf '\n%s\n%s%s %s%s% s%s %s%s\n%s⚡ %s' $pr_duration (set_color $status_color) $status_smilie (set_color blue) $pr_cwd (set_color yellow) $pr_git_info (set_color normal) $time (set_color $status_color) (set_color normal);
+  or   printf '\n%s%s %s%s% s%s %s%s\n%s⚡ %s' (set_color $status_color) $status_smilie (set_color blue) $pr_cwd (set_color yellow) $pr_git_info (set_color normal) $time (set_color $status_color) (set_color normal)
 
 end
-
-

@@ -303,7 +303,7 @@ function! s:SuperTab(command)
 
     " exception: if in <c-p> mode, then <c-n> should move up the list, and
     " <c-p> down the list.
-    if a:command == 'p' &&
+    if a:command == 'n' &&
       \ (b:complType == "\<c-p>" ||
       \   (b:complType == 'context' &&
       \    tolower(g:SuperTabContextDefaultCompletionType) == '<c-p>'))
