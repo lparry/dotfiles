@@ -13,6 +13,6 @@ function fish_prompt --description 'Write out the prompt'
 
   test -n "$pr_git_info";and true; or set -l pr_git_info ''
 
-  printf '%s\n%s%s %s%s%s%s %s%s\n%s⚡ %s' $pr_duration (set_color $status_color) $status_smilie (set_color blue) $pr_cwd (set_color yellow) $pr_git_info (set_color normal) $time (set_color $status_color) (set_color normal)
+  printf '%s\n%s%s %s%s %s[%s] %s%s\n%s⚡ %s' $pr_duration (set_color $status_color) $status_smilie (set_color blue) $pr_cwd (set_color yellow) $pr_git_info (set_color normal) $time (set_color $status_color) (set_color normal)
 
 end
