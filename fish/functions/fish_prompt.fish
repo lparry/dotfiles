@@ -8,6 +8,7 @@ function fish_prompt --description 'Write out the prompt'
     set status_smilie ":("
   end
 
+
   set -l duration $CMD_DURATION
 
   set -l time (date '+%T')
@@ -28,7 +29,12 @@ function fish_prompt --description 'Write out the prompt'
   printf '%s%s ' (set_color cyan) $pr_cwd
 
   if test -n "$pr_git_info"
-    printf '%s[%s%s%s] ' (set_color blue) (set_color yellow) $pr_git_info (set_color blue)
+    if git_dirty
+      set git_color yellow --bold --underline --background red
+    else
+      set git_color green
+    end
+    printf '%s[%s%s%s] ' (set_color blue) (set_color $git_color) $pr_git_info (set_color blue --background normal)
   end
   printf '%s%s ' (set_color normal) $time
   printf '\n%s⚡%s ' (set_color $status_color) (set_color normal)
