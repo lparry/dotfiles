@@ -93,8 +93,8 @@ inoremap <Up> <C-o>gk
 " inoremap <s-tab> <c-r>=InsertTabWrapper("backward")<cr>
 
 function! TidyWhiteSpace()
-  if search('\s\+$')
-    :%s/\s\+$//
+  if search('\S\s\+$')
+    :%s/\(\S\)\s\+$/\1/
   endif
   if search('\t')
     :%s/\t/  /g
