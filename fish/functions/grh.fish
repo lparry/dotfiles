@@ -1,3 +1,3 @@
 function grh
-	git reset --hard $argv; 
+  command git reset --hard $argv; 
 end

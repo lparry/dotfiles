@@ -1,4 +1,3 @@
 function gcf
-	git config -l
-
+  command git config -l
 end

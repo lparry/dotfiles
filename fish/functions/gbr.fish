@@ -1,5 +1,3 @@
 function gbr
-	git branch -v $argv
-
-
+  command git branch -v $argv
 end

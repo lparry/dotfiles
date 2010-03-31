@@ -1,3 +1,3 @@
 function gs
-	git show $argv;
+  command git show $argv;
 end

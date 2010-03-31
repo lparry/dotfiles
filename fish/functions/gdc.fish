@@ -1,3 +1,3 @@
 function gdc
-	git diff --cached $argv; 
+  command git diff --cached $argv; 
 end

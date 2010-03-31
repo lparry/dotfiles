@@ -1,3 +1,3 @@
 function gpu
-  git pull $argv
+  command git pull $argv
 end

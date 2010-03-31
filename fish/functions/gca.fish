@@ -1,5 +1,3 @@
 function gca
-	gc -a $argv
-
-
+  gc -a $argv
 end

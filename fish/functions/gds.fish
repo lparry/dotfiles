@@ -1,3 +1,3 @@
 function gds
-	gitd --stat $argv; 
+  command git d --stat $argv; 
 end

@@ -18,8 +18,8 @@
   added = yellow
   changed = green
   untracked = cyan
-#[apply]
-#  whitespace = nowarn
+[apply]
+  whitespace = nowarn
 [branch]
   autosetupmerge = true
 [alias]

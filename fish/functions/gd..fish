@@ -1,3 +1,3 @@
 function gd.
-	git diff --color-words='.' $argv; 
+  command git diff --color-words='.' $argv; 
 end

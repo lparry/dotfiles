@@ -1,3 +1,3 @@
 function gst
-	git stash $argv; 
+  command git stash $argv; 
 end

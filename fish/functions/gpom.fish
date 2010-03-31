@@ -1,4 +1,4 @@
 function gpom
-	git push origin master $argv
+  command git push origin master $argv
 
 end

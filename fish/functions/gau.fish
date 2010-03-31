@@ -1,3 +1,3 @@
 function gau
-	git add -u $argv; 
+  command git add -u $argv;
 end

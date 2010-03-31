@@ -1,4 +1,3 @@
 function gf
-	git fetch $argv
-
+  command git fetch $argv
 end
