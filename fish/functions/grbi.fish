@@ -1,3 +1,3 @@
 function grbi
-	grb -i $argv; 
+  grb -i $argv;
 end

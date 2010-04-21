@@ -1,3 +1,3 @@
 function gstp
-	git stash pop $argv; 
+  command git stash pop $argv; 
 end

@@ -1,3 +1,3 @@
 function gm
-  git merge $argv;
+  command git merge $argv;
 end

@@ -1,3 +1,3 @@
 function grbc
-	git rebase --continue $argv; 
+  command git rebase --continue $argv;
 end

@@ -1,5 +1,4 @@
 function gdw
-	git diff $color_ruby_words $argv
-
+  command git diff $color_ruby_words $argv
 
 end

@@ -1,3 +1,3 @@
 function gap
-	ga -p $argv; 
+  ga -p $argv;
 end

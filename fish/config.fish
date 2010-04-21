@@ -49,7 +49,7 @@ if test (hostname -s) = 'macbook'
   set -x VIM_APP_DIR "/Volumes/data/Users/lparry/Applications - User"
 end
 
-if test (hostname -s) = 'lucas-parrys-imac'
+if test (hostname -s) = 'lucas-parrys-imac-2'
   prefix_path $HOME/bin
   prefix_path /opt/local/bin
   prefix_path /usr/local/mysql/bin
@@ -60,6 +60,17 @@ if test (hostname -s) = 'lucas-parrys-imac'
   set -x MY_RUBY_HOME /Users/lparry/.rvm/ruby-1.8.6-p383
   set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.6
   set -x RUBY_VERSION 'ruby 1.8.6'
+  cd ~/dotfiles -quiet
+  git_dirty
+  if test $status -eq 0
+    echo ""
+    echo "~/dotfiles has uncommitted changes:"
+    command git status
+    echo "------------------------------------------------------------------"
+    echo ""
+  end
+  cd dev/marketplace
 end
 
 set -x TERM xterm-color
+

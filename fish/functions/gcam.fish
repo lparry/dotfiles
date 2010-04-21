@@ -1,5 +1,3 @@
 function gcam
-	gca --amend $argv
-
-
+  gca --amend $argv
 end

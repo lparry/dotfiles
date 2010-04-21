@@ -1,5 +1,3 @@
 function gcm
-	gc --amend $argv
-
-
+  gc --amend $argv
 end

@@ -1,3 +1,3 @@
 function gfo
-	git fetch origin
+  command git fetch origin
 end

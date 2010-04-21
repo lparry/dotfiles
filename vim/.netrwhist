@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/lparry/dev/marketplace/app/models/asset'
+let g:netrw_dirhist_2='/Users/lparry/dotfiles/fish/functions'
+let g:netrw_dirhist_3='/Users/lparry/dev/marketplace/app/models'
+let g:netrw_dirhist_4='/Users/lparry/dev/marketplace/app/services/cloud_storage_provider'
+let g:netrw_dirhist_5='/Users/lparry/dev/marketplace/app/services'

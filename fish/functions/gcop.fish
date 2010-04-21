@@ -1,3 +1,3 @@
 function gcop
-	gco -p $argv; 
+  gco -p $argv;
 end

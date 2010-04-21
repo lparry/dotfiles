@@ -8,8 +8,8 @@ source ~/.vim/autoload/rspec.vim
 
 " visual stuff
 syntax on
-set background=dark
-colorscheme koehler
+set background=light
+colorscheme dual
 set nowrap
 set number " line numbers
 set ruler " show cursor line and column in the status line
@@ -96,13 +96,24 @@ inoremap <Up> <C-o>gk
 " inoremap <tab> <c-r>=InsertTabWrapper("forward")<cr>
 " inoremap <s-tab> <c-r>=InsertTabWrapper("backward")<cr>
 
-function! TidyWhiteSpace()
-  if search('\s\+$')
-    :%s/\s\+$//
-  endif
+function ReplaceTabsWithSpaces()
   if search('\t')
     :%s/\t/  /g
   endif
+endfunction
+
+function! TidyWhiteSpace()
+  if search('\S\s\+$')
+    :%s/\(\S\)\s\+$/\1/
+  endif
+  call ReplaceTabsWithSpaces()
+endfunction
+
+function! TidyWhiteSpaceAggressive()
+  if search('\s\+$')
+    :%s/\s\+$//
+  endif
+  call ReplaceTabsWithSpaces()
 endfunction
 
 " makes gf always open in a new pane
@@ -150,6 +161,7 @@ let mapleader = ","
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>w :call TidyWhiteSpace()<CR>
+map <Leader>W :call TidyWhiteSpaceAggressive()<CR>
 map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> 2> /dev/null <CR>
 map <Leader>j :vs <C-R>=SpecOrCodeToggle() <CR> <CR>
 
