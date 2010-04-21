@@ -60,8 +60,8 @@ if test (hostname -s) = 'lucas-parrys-imac-2'
   set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.6
   set -x RUBY_VERSION 'ruby 1.8.6'
   cd ~/dotfiles -quiet
-  if test (git_dirty) -eq 0
-  else
+  git_dirty
+  if test $status -eq 0
     echo ""
     echo "~/dotfiles has uncommitted changes:"
     command git status
