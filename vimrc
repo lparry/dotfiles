@@ -5,7 +5,7 @@ source ~/.vim/autoload/rspec.vim
 " visual stuff
 syntax on
 set background=light
-colorscheme macvim
+colorscheme dual
 set nowrap
 set number " line numbers
 set ruler " show cursor line and column in the status line
@@ -41,12 +41,12 @@ map <C-n> :cn
 map <C-p> :cp
 
 "ctrl + a/e to move to end/start of lines
-:map <C-a> 0
+:map <C-a> ^
 :map <C-e> $
 :cmap <C-a> <home>
 :cmap <C-e> <end>
 :imap <C-e> <ESC>$i<right>
-:imap <C-a> <ESC>0i
+:imap <C-a> <ESC>^i
 
 "maximize windows
 :map _ <c-w>_
