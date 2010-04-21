@@ -1,3 +1,11 @@
 function gpo
-  command git push origin $argv
+  command git pull
+  if test (pwd) = '~/dev/marketplace'
+    command git push origin $argv
+    if test $status -eq 0
+      marketplace-ci update
+    end
+  else
+    command git push origin $argv
+  end
 end
