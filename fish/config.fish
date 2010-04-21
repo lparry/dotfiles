@@ -46,6 +46,7 @@ end
 
 if test (hostname -s) = 'macbook'
   prefix_path /opt/local/bin/
+  set -x VIM_APP_DIR "/Volumes/data/Users/lparry/Applications - User"
 end
 
 if test (hostname -s) = 'lucas-parrys-imac'

@@ -1,3 +1,7 @@
+" :r!command == past output of command at current position
+" :RMigration migration name == open a migration without worrying about the hash
+" konqterm == shell within vim
+"
 set nocompatible
 
 source ~/.vim/autoload/rspec.vim
@@ -41,12 +45,12 @@ map <C-n> :cn
 map <C-p> :cp
 
 "ctrl + a/e to move to end/start of lines
-:map <C-a> 0
+:map <C-a> ^
 :map <C-e> $
 :cmap <C-a> <home>
 :cmap <C-e> <end>
 :imap <C-e> <ESC>$i<right>
-:imap <C-a> <ESC>0i
+:imap <C-a> <ESC>^i
 
 "maximize windows
 :map _ <c-w>_
