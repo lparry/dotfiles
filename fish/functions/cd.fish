@@ -19,7 +19,7 @@ function cd --description 'Change directory'
         if test $argv[1] = $PWD
           return 0
         else
-          echo "changing to $argv[1]"
+          #echo "changing to $argv[1]"
           set -g OLDPWD $PWD
           builtin cd $argv[1]
           set -l cd_status $status
@@ -30,7 +30,9 @@ function cd --description 'Change directory'
           #   cap_completion
           # end
           if test $cd_status = 0
-            ls
+            if test (count $argv) -eq '1'
+              ls
+            end
           end
           return $cd_status
         end

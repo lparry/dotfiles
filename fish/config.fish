@@ -59,6 +59,15 @@ if test (hostname -s) = 'lucas-parrys-imac-2'
   set -x MY_RUBY_HOME /Users/lparry/.rvm/ruby-1.8.6-p383
   set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.6
   set -x RUBY_VERSION 'ruby 1.8.6'
+  cd ~/dotfiles -quiet
+  if test (git_dirty) -eq 0
+  else
+    echo ""
+    echo "~/dotfiles has uncommitted changes:"
+    command git status
+    echo "------------------------------------------------------------------"
+    echo ""
+  end
   cd dev/marketplace
 end
 
