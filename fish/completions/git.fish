@@ -1,11 +1,11 @@
 # fish completion for git
 
 function __fish_git_branches
-  git branch --no-color -a 2>/dev/null | sed 's/^..//'
+  command git branch --no-color -a 2>/dev/null | sed 's/^..//'
 end
 
 function __fish_git_tags
-  git tag
+  command git tag
 end
 
 function __fish_git_heads
@@ -14,7 +14,7 @@ function __fish_git_heads
 end
 
 function __fish_git_remotes
-  git remote
+  command git remote
 end
 
 function __fish_git_ranges
@@ -82,6 +82,7 @@ complete -f -c git -n '__fish_git_using_command show' -a '(__fish_git_branches)'
 ### show-branch
 complete -f -c git -n '__fish_git_needs_command' -a show-branch -d 'Shows the commits on branches'
 complete -f -c git -n '__fish_git_using_command show-branch' -a '(__fish_git_heads)' --description 'Branch'
+complete -f -c gco -a '(__fish_git_heads)' --description 'Branch'
 # TODO options
 
 ### add
