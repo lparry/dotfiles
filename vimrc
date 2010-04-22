@@ -1,3 +1,7 @@
+" :r!command == past output of command at current position
+" :RMigration migration name == open a migration without worrying about the hash
+" konqterm == shell within vim
+"
 set nocompatible
 
 set shell=/bin/bash
