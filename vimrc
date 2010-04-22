@@ -1,5 +1,7 @@
 set nocompatible
 
+set shell=/bin/bash
+
 source ~/.vim/autoload/rspec.vim
 
 " visual stuff
@@ -92,9 +94,15 @@ inoremap <Up> <C-o>gk
 " inoremap <tab> <c-r>=InsertTabWrapper("forward")<cr>
 " inoremap <s-tab> <c-r>=InsertTabWrapper("backward")<cr>
 
-function ReplaceTabsWithSpaces()
+function! ReplaceTabsWithSpaces()
   if search('\t')
     :%s/\t/  /g
+  endif
+endfunction
+
+function! RemoveDoubleBlankLines()
+  if search('\n\s*\n\s*\n')
+    :%s/\n\s*\n\s*\n/\r\r/g
   endif
 endfunction
 
@@ -103,6 +111,7 @@ function! TidyWhiteSpace()
     :%s/\(\S\)\s\+$/\1/
   endif
   call ReplaceTabsWithSpaces()
+  call RemoveDoubleBlankLines()
 endfunction
 
 function! TidyWhiteSpaceAggressive()
@@ -110,6 +119,7 @@ function! TidyWhiteSpaceAggressive()
     :%s/\s\+$//
   endif
   call ReplaceTabsWithSpaces()
+  call RemoveDoubleBlankLines()
 endfunction
 
 " makes gf always open in a new pane
@@ -158,7 +168,9 @@ let mapleader = ","
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>w :call TidyWhiteSpace()<CR>
 map <Leader>W :call TidyWhiteSpaceAggressive()<CR>
+map <leader>i ggVG=
 map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> 2> /dev/null <CR>
+map <Leader>S :!spec -f n <C-R>=SpecFileName() <CR> <CR>
 map <Leader>j :vs <C-R>=SpecOrCodeToggle() <CR> <CR>
 
 "surrounding highlighted strings
