@@ -2,7 +2,12 @@ set nocompatible
 
 set shell=/bin/bash
 
-source ~/.vim/autoload/rspec.vim
+" Pathogen this shit UP!
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
+
+source rspec.vim
 
 " visual stuff
 syntax on
