@@ -11,7 +11,7 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
 
-source rspec.vim
+source ~/.vim/bundle/lucas-rspec/autoload/rspec.vim
 
 " visual stuff
 syntax on
