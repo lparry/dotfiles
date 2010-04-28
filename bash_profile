@@ -31,7 +31,7 @@ alias mma='cd ~/dev/marketplace && mate app config db features spec compass Rake
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export TERM=xterm-color
-export EDITOR=vim
+export EDITOR=/usr/bin/vim
 export IRBRC="/Users/lparry/.irbrc"
 
 #add ssh known hosts to auto completion
