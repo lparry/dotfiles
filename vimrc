@@ -34,8 +34,8 @@ set matchtime=10 " tenths of a second to show
 " line and column makers
 set cursorcolumn
 set cursorline
-hi CursorLine ctermbg=Gray cterm=NONE guibg=Grey gui=underline
-hi CursorColumn ctermbg=Gray cterm=NONE guibg=Grey
+hi CursorLine ctermbg=Gray ctermfg=Black cterm=NONE guibg=Grey gui=underline
+hi CursorColumn ctermbg=Gray ctermfg=Black cterm=NONE guibg=Grey
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
