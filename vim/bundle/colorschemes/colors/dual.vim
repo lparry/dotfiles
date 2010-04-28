@@ -223,7 +223,7 @@ hi Debug ctermbg=bg ctermfg=DarkGray guibg=bg guifg=DarkGray gui=none
 hi MatchParen ctermbg=White ctermfg=Black cterm=NONE guibg=DarkBlue guifg=bg gui=none
 hi Error ctermbg=Red ctermfg=White cterm=NONE guibg=bg guifg=Red gui=none
 hi Ignore ctermbg=bg ctermfg=bg cterm=NONE guibg=bg guifg=bg gui=none
-hi Todo ctermbg=Green ctermfg=bg cterm=NONE guibg=DarkGreen guifg=bg gui=none
+hi Todo ctermbg=Green ctermfg=Red cterm=none guibg=DarkGreen guifg=Red gui=none
 hi Underlined ctermbg=bg ctermfg=Cyan cterm=underline guibg=bg guifg=Blue2 gui=underline
 "}}}1
 "==========================================================================={{{1

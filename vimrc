@@ -13,10 +13,18 @@ call pathogen#runtime_append_all_bundles()
 
 source ~/.vim/bundle/lucas-rspec/autoload/rspec.vim
 
+set guifont=Inconsolata:h18
+
 " visual stuff
 syntax on
-set background=light
 colorscheme dual
+
+if has("gui_running")
+  set background=light
+else
+  set background=dark
+endif
+
 set nowrap
 set number " line numbers
 set ruler " show cursor line and column in the status line
@@ -26,7 +34,8 @@ set matchtime=10 " tenths of a second to show
 " line and column makers
 set cursorcolumn
 set cursorline
-hi cursorcolumn ctermbg=red
+hi CursorLine ctermbg=Gray cterm=NONE guibg=Grey gui=underline
+hi CursorColumn ctermbg=Gray cterm=NONE guibg=Grey
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
