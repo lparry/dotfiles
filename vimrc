@@ -34,8 +34,8 @@ set matchtime=10 " tenths of a second to show
 " line and column makers
 set cursorcolumn
 set cursorline
-hi CursorLine ctermbg=Gray ctermfg=Black cterm=NONE guibg=Grey gui=underline
-hi CursorColumn ctermbg=Gray ctermfg=Black cterm=NONE guibg=Grey
+hi CursorLine ctermbg=lightgray ctermfg=black cterm=none guibg=grey gui=none
+hi CursorColumn ctermbg=lightgray ctermfg=black cterm=none guibg=grey gui=none
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -214,3 +214,7 @@ vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
 "autocmd VimEnter * set nocursorcolumn "turn off the cursorcolumn in the nerdtree pane that is now selected
 "autocmd VimEnter * wincmd p "change to the main pane
 "
+augroup md
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:&gt;
+augroup END
+
