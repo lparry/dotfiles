@@ -213,8 +213,3 @@ vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
 "autocmd VimEnter * NERDTree "open NERDTree when vim opens
 "autocmd VimEnter * set nocursorcolumn "turn off the cursorcolumn in the nerdtree pane that is now selected
 "autocmd VimEnter * wincmd p "change to the main pane
-"
-augroup md
-  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:&gt;
-augroup END
-
