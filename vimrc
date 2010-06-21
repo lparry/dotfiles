@@ -31,6 +31,8 @@ set ruler " show cursor line and column in the status line
 set showmatch " briefly jump to matching bracket
 set matchtime=10 " tenths of a second to show
 
+set scrolloff=5 " show 5 lines of context when searching
+
 " line and column makers
 set cursorcolumn
 set cursorline
