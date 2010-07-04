@@ -44,7 +44,7 @@ end
 
 
 
-if test (hostname -s) = 'macbook'
+if test (hostname -s) = 'lucas-macbook'
   prefix_path /opt/local/bin/
   set -x VIM_APP_DIR "/Volumes/data/Users/lparry/Applications - User"
 end
