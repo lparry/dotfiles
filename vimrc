@@ -25,7 +25,7 @@ else
   set background=dark
 endif
 
-set nowrap
+set wrap
 set number " line numbers
 set ruler " show cursor line and column in the status line
 set showmatch " briefly jump to matching bracket
