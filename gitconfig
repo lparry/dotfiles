@@ -34,3 +34,5 @@
   tool = opendiff
 [push]
   default = current
+[core]
+	excludesfile = /Users/lparry/.gitignore
