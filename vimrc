@@ -4,6 +4,9 @@
 "
 set nocompatible
 
+"256 color terminal support (ie. iTerm.app on osx)
+set t_Co=256
+
 set shell=/bin/bash
 
 " Pathogen this shit UP!
@@ -36,8 +39,9 @@ set scrolloff=5 " show 5 lines of context when searching
 " line and column makers
 set cursorcolumn
 set cursorline
-hi CursorLine ctermbg=lightgray ctermfg=black cterm=none guibg=grey gui=none
-hi CursorColumn ctermbg=lightgray ctermfg=black cterm=none guibg=grey gui=none
+hi CursorLine ctermbg=none cterm=underline gui=underline
+hi CursorColumn ctermbg=none cterm=underline gui=underline
+hi LineNr ctermfg=gray
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -55,7 +59,7 @@ autocmd BufReadPost *
       \ endif
 
 " spelling stuff
-setlocal spell spelllang=en_au
+"setlocal spell spelllang=en_au
 :map <F5> :setlocal spell! spelllang=en_au<cr>
 :imap <F5> <ESC>:setlocal spell! spelllang=en_au<cr>
 
