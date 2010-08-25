@@ -24,24 +24,9 @@ end
 set fish_greeting ""
 set -x CLICOLOR 1
 
-function parse_git_branch
-  sh -c 'git branch --no-color 2> /dev/null' | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-end
-
 set BROWSER open
 
 bind \cr "rake"
-
-function ss -d "Run the script/server"
-  script/server
-end
-
-function sc -d "Run the Rails console"
-  script/console
-end
-
-# set -x JAVA_HOME "/usr/"
-
 
 
 if test (hostname -s) = 'lucas-macbook'
@@ -49,17 +34,17 @@ if test (hostname -s) = 'lucas-macbook'
   set -x VIM_APP_DIR "/Volumes/data/Users/lparry/Applications - User"
 end
 
-if test (hostname -s) = 'lucas-parrys-imac-2'
+if test (hostname -s) = 'lucas-imac'
   prefix_path $HOME/bin
   prefix_path /opt/local/bin
   prefix_path /usr/local/mysql/bin
   prefix_path $HOME/.rvm/bin/
   prefix_path $HOME/.gem/ruby/1.8/bin
-  prefix_path $HOME/.rvm/ruby-1.8.6-p383/bin
-  prefix_path $HOME/.rvm/gems/ruby/1.8.6/bin/
-  set -x MY_RUBY_HOME /Users/lparry/.rvm/ruby-1.8.6-p383
-  set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.6
-  set -x RUBY_VERSION 'ruby 1.8.6'
+  prefix_path $HOME/.rvm/rubies/ruby-1.8.7-p299/bin
+  prefix_path $HOME/.rvm/gems/ruby/1.8.7/bin/
+  set -x MY_RUBY_HOME /Users/lparry/.rvm/ruby-1.8.7-p299
+  set -x GEM_HOME /Users/lparry/.rvm/gems/ruby/1.8.7
+  set -x RUBY_VERSION 'ruby 1.8.7'
   cd ~/dotfiles -quiet
   git_dirty
   if test $status -eq 0
@@ -69,7 +54,6 @@ if test (hostname -s) = 'lucas-parrys-imac-2'
     echo "------------------------------------------------------------------"
     echo ""
   end
-  cd dev/marketplace
 end
 
 set -x TERM xterm-color
