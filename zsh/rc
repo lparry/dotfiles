@@ -63,10 +63,16 @@ compinit -C
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-if [[ `hostname -s` = 'lucas-imac' ]]; then
+if [[ `hostname -s` = 'lucas' ]]; then
   ## at work
   cd dev/marketplace
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+
+# make rails migration and edit the file
+function migration {
+  migration_file=`script/generate migration $1 | tail -n1 | sed -e 's/create//' -e 's/ *//g'`
+  $EDITOR $migration_file
+}
