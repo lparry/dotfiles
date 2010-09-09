@@ -20,7 +20,7 @@ set guifont=Inconsolata:h18
 
 " visual stuff
 syntax on
-colorscheme dual
+"colorscheme dual
 
 if has("gui_running")
   set background=light
@@ -159,8 +159,7 @@ set infercase " adjust case of match for keyword completion
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
 " backup files
-set backup " keep backup file after overwriting a file
-set backupdir=~/tmp/vim " list of directories for the backup file
+set nobackup
 
 " Use Ack instead of grep
 
