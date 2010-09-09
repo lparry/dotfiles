@@ -20,24 +20,6 @@ def debug_active_record(debug_messages = true)
 end
 
 require 'utility_belt'
-def regex_methods 
-  eval <<HERE
-  class Object
-    def methods_with_args(regex=nil)
-      if (regex == nil)
-        methods_without_args
-      else
-        methods_without_args.reject{ |x| not x.match(regex)}
-      end
-    end
-    alias_method_chain :methods, :args
-  end
-HERE
-end
-
-def methods_not_from_object(obj)
-  obj.methods - Object.methods
-end
 
 class Fixnum
   def columnize(width=5)
