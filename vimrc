@@ -204,6 +204,9 @@ vmap <Leader>q{ xi{}<esc>hp
 vmap <Leader>q[ xi[]<esc>hp
 vmap <Leader>q# xi#{}<esc>hp
 
+
+vmap <Leader>a :Align =><CR>
+
 "replace 'blah' with '"blah: #{blah}"'
 vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
 
@@ -218,3 +221,6 @@ vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
 "autocmd VimEnter * NERDTree "open NERDTree when vim opens
 "autocmd VimEnter * set nocursorcolumn "turn off the cursorcolumn in the nerdtree pane that is now selected
 "autocmd VimEnter * wincmd p "change to the main pane
+
+"trying out ctrl+l = hashrocket
+imap <C-l> <Space>=><Space>"

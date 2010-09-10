@@ -1,0 +1,2 @@
+supertab.vba.vba: call delete('/Users/lparry/.vim/doc/supertab.txt')|call delete('/Users/lparry/.vim/plugin/supertab.vim')
+Align.vba.vba: call delete('/Users/lparry/.vim/plugin/AlignPlugin.vim')|call delete('/Users/lparry/.vim/plugin/AlignMapsPlugin.vim')|call delete('/Users/lparry/.vim/plugin/cecutil.vim')|call delete('/Users/lparry/.vim/doc/Align.txt')|call delete('/Users/lparry/.vim/autoload/Align.vim')|call delete('/Users/lparry/.vim/autoload/AlignMaps.vim')
