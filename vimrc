@@ -20,7 +20,7 @@ set guifont=Inconsolata:h18
 
 " visual stuff
 syntax on
-"colorscheme dual
+colorscheme dual
 
 if has("gui_running")
   set background=light
