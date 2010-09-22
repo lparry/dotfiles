@@ -10,8 +10,10 @@ set t_Co=256
 set shell=/bin/bash
 
 " Pathogen this shit UP!
+filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
 
 source ~/.vim/bundle/lucas-rspec/autoload/rspec.vim
