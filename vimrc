@@ -224,3 +224,6 @@ vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
 
 "trying out ctrl+l = hashrocket
 imap <C-l> <Space>=><Space>"
+
+
+au BufNewFile,BufRead *.zsh*  setfiletype zsh
