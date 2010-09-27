@@ -1,6 +1,6 @@
 export git_concise_log_format='--pretty=format:%Cblue%h%d%Creset %cr %Cgreen%an%Creset %s'
 
-function safe_git() {
+function git() {
   if [[ $argv[1] = 'merge' || $argv[1] = 'rebase' ]] then
     echo "use aliases"
   else
@@ -16,7 +16,6 @@ function push_with_ci() {
   fi
 }
 
-alias git='safe_git'
 alias gm='command git merge --no-ff'
 alias grbo='command git rebase --preserve-merges origin/`current_branch`'
 
