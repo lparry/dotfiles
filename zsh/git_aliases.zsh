@@ -8,6 +8,14 @@ function safe_git() {
   fi
 }
 
+function push_with_ci() {
+  if  [[ $(current_branch) == 'master' ]] then
+    git push origin && marketplace-ci update
+  else
+    git push origin
+  fi
+}
+
 alias git='safe_git'
 alias gm='command git merge --no-ff'
 alias grbo='command git rebase --preserve-merges origin/`current_branch`'
@@ -27,9 +35,9 @@ alias gcm='gc --amend'
 alias gco='git checkout'
 alias gcop='gco -p'
 alias gd='git diff -M'
-alias gd.='git diff -M --color-words="."'
+alias gd='git diff -M --color-words="."'
 alias gdc='git diff --cached -M'
-alias gdc.='git diff --cached -M --color-words="."'
+alias gdc='git diff --cached -M --color-words="."'
 alias gdcw='git diff --cached $color_ruby_words'
 alias gds='gitd --stat'
 alias gdw='git diff $color_ruby_words'
@@ -42,7 +50,7 @@ alias gmd='gm $argv && gbr -d $argv $argv && glcg'
 alias gp='git push'
 alias gpb='git push banana'
 alias gpd='gp deploy deploy'
-alias gpo='git push origin'
+alias gpo='push_with_ci'
 alias gpom='git push origin master'
 alias gpt='gp --tags'
 alias gr='git reset'
@@ -57,5 +65,6 @@ alias grsh='git reset --soft HEAD~'
 alias grv='git remote -v'
 alias gs='git show'
 alias gss='gs --stat'
+alias gst='git stash'
 alias gstp='git stash pop'
 alias gstwc='gst save --keep-index'

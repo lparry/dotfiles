@@ -21,10 +21,10 @@ setopt correct                 # spelling correction
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
-. ~/.zsh/prompt
-. ~/.zsh/aliases
-. ~/.zsh/git_aliases
-. ~/.zsh/functions
+. ~/.zsh/prompt.zsh
+. ~/.zsh/aliases.zsh
+. ~/.zsh/git_aliases.zsh
+. ~/.zsh/functions.zsh
 
 export EDITOR='vim'
 export PATH="$HOME/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin"
