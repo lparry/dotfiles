@@ -16,9 +16,26 @@ function push_with_ci() {
   fi
 }
 
-alias gm='command git merge --no-ff'
-alias grbo='command git rebase --preserve-merges origin/`current_branch`'
+function grbo() {
+  if [[ $(git status -s -uno) == '' ]] then
+    clean=1
+  else
+    clean=0
+  fi
 
+  if [[ $clean == 0 ]] then
+    git stash
+  fi
+  command git rebase --preserve-merges origin/`current_branch`
+  if [[ $clean == 0 ]] then
+    git stash pop
+  fi
+}
+
+alias gm='command git merge --no-ff'
+
+
+alias gfrpo='gfo && gst && grbo && gpo && gstp'
 alias g='git status'
 alias ga='git add'
 alias gab='gm $argv && gbr -d $argv'
