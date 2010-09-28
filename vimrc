@@ -4,6 +4,12 @@
 "
 set nocompatible
 
+"apparently these two lines make vim use normal regex, sadly i know a mangle
+"of vim and perl regex so it's gonna hurt for a bit
+nnoremap / /\v
+vnoremap / /\v
+
+
 "256 color terminal support (ie. iTerm.app on osx)
 set t_Co=256
 
@@ -155,6 +161,7 @@ nnoremap gf <C-W>f
 set ignorecase
 set hlsearch
 set incsearch " highlight match while typing search pattern
+set showmatch
 set infercase " adjust case of match for keyword completion
 
 " make backspace work properly
@@ -206,11 +213,21 @@ vmap <Leader>q{ xi{}<esc>hp
 vmap <Leader>q[ xi[]<esc>hp
 vmap <Leader>q# xi#{}<esc>hp
 
-
+"align on hashrockets
 vmap <Leader>a :Align =><CR>
+
+"git blame
+map <Leader>g :Gblame<CR>
 
 "replace 'blah' with '"blah: #{blah}"'
 vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
+
+" , space will clear search
+nnoremap <leader><space> :noh<cr>
+
+" tab to go to matched bracket
+nnoremap <tab> %
+vnoremap <tab> %
 
 
 
@@ -229,3 +246,5 @@ imap <C-l> <Space>=><Space>"
 
 
 au BufNewFile,BufRead *.zsh*  setfiletype zsh
+
+
