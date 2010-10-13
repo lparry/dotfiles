@@ -79,7 +79,7 @@ map <C-p> :cp
 :map <C-e> $
 :cmap <C-a> <home>
 :cmap <C-e> <end>
-:imap <C-e> <ESC>$i<right>
+:imap <C-e> <ESC>$a
 :imap <C-a> <ESC>^i
 
 "maximize windows
