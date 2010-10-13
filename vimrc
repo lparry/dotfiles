@@ -204,6 +204,7 @@ map <leader>i ggVG=
 map <Leader>s :!spec -f n <C-R>=SpecFileName() <CR> 2> /dev/null <CR>
 map <Leader>S :!spec -f n <C-R>=SpecFileName() <CR> <CR>
 map <Leader>j :vs <C-R>=SpecOrCodeToggle() <CR> <CR>
+map <Leader>cuke mcggVG=:%s/^\(\s*\)And/\1  And/<cr>:%s/^\(\s*\)Then/\1 Then/<cr>:%s/^\(\s*\)When/\1 When/<cr>,<space>`c
 
 "surrounding highlighted strings
 vmap <Leader>q" xi""<esc>hp
