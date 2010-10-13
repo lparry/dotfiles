@@ -17,3 +17,4 @@ alias restart_rails_app='touch tmp/restart.txt; reload_webkit'
 alias tigs='tig status $argv'
 
 
+alias ss='unicorn_rails'
