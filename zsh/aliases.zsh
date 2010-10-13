@@ -16,6 +16,4 @@ alias reload_webkit='osascript -e 'tell application "WebKit" to do JavaScript "w
 alias restart_rails_app='touch tmp/restart.txt; reload_webkit'
 alias tigs='tig status $argv'
 
-alias add_alias='mate -w ~/.zsh/aliases; cd ~/.dot-files; ga files/.zsh/aliases; gc'
-alias git_alias='mate -w ~/.zsh/git_aliases; cd ~/.dot-files; ga files/.zsh/git_aliases; gc'
 
