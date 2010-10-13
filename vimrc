@@ -249,6 +249,16 @@ imap <C-l> <Space>=><Space>"
 au BufNewFile,BufRead *.zsh*  setfiletype zsh
 
 
+"disable arrow keys, so n00bs really cant use my vim :P
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 set laststatus=2
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [format:%{&ff}]\ [type:%y]\ [ascii:\%03.3b]\ [hex:\%02.2B]\ [pos:%l,%v][%p%%]\ [len:%L]
 
