@@ -249,3 +249,6 @@ imap <C-l> <Space>=><Space>"
 au BufNewFile,BufRead *.zsh*  setfiletype zsh
 
 
+set laststatus=2
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [format:%{&ff}]\ [type:%y]\ [ascii:\%03.3b]\ [hex:\%02.2B]\ [pos:%l,%v][%p%%]\ [len:%L]
+
