@@ -21,6 +21,7 @@ setopt correct                 # spelling correction
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
+. ~/.zsh/gnu-coreutils.zsh
 . ~/.zsh/prompt.zsh
 . ~/.zsh/aliases.zsh
 . ~/.zsh/git_aliases.zsh
