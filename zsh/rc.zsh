@@ -27,10 +27,11 @@ setopt correct                 # spelling correction
 . ~/.zsh/git_aliases.zsh
 . ~/.zsh/functions.zsh
 
-export EDITOR='vim'
-export PATH="$HOME/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin"
+export EDITOR='/usr/bin/vim'
+export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin"
 export MANPATH="/usr/local/share/man:/usr/X11/man:/usr/share/man"
 export TERM=xterm-256color
+export ACK_OPTIONS='--smart-case'
 
 
 # Lines configured by zsh-newuser-install
