@@ -28,7 +28,6 @@ set guifont=Inconsolata:h18
 
 " visual stuff
 syntax on
-colorscheme railscasts
 
 if has("gui_running")
   set background=light
@@ -43,13 +42,6 @@ set showmatch " briefly jump to matching bracket
 set matchtime=10 " tenths of a second to show
 
 set scrolloff=5 " show 5 lines of context when searching
-
-" line and column makers
-set cursorcolumn
-set cursorline
-hi CursorLine ctermbg=none cterm=underline gui=underline
-hi CursorColumn ctermbg=none cterm=underline gui=underline
-hi LineNr ctermfg=gray
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -159,6 +151,7 @@ nnoremap gf <C-W>f
 
 " searching
 set ignorecase
+set smartcase
 set hlsearch
 set incsearch " highlight match while typing search pattern
 set showmatch
@@ -215,7 +208,10 @@ vmap <Leader>q[ xi[]<esc>hp
 vmap <Leader>q# xi#{}<esc>hp
 
 "align on hashrockets
-vmap <Leader>a :Align =><CR>
+vmap <Leader>=> :Align =><CR>
+
+"Ack
+map <Leader>a :Ack 
 
 "git blame
 map <Leader>g :Gblame<CR>
@@ -262,3 +258,15 @@ inoremap <right> <nop>
 set laststatus=2
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [format:%{&ff}]\ [type:%y]\ [ascii:\%03.3b]\ [hex:\%02.2B]\ [pos:%l,%v][%p%%]\ [len:%L]
 
+colorscheme railscasts
+"make visual mode stand out better
+highlight Visual guibg=#FF0000 ctermbg=60
+highlight Search guifg=NONE ctermfg=NONE guibg=#990000 ctermbg=235 gui=italic cterm=underline
+" line and column makers
+highlight CursorLine ctermbg=none cterm=underline gui=underline
+highlight CursorColumn ctermbg=none cterm=underline gui=underline
+set cursorcolumn
+set cursorline
+highlight LineNr ctermfg=gray
+
+set directory=~/tmp//
