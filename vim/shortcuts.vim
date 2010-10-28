@@ -1,22 +1,24 @@
 "keyboard shortcuts
 " spelling stuff
 "setlocal spell spelllang=en_au
-:map <F5> :setlocal spell! spelllang=en_au<cr>
-:imap <F5> <ESC>:setlocal spell! spelllang=en_au<cr>
+map <F5> :setlocal spell! spelllang=en_au<cr>
+imap <F5> <ESC>:setlocal spell! spelllang=en_au<cr>
+
+map <F6> :call rainbow_parentheses#Toggle()<cr>
 
 map <C-n> :cn
 map <C-p> :cp
 
 "ctrl + a/e to move to end/start of lines
-:map <C-a> ^
-:map <C-e> $
-:cmap <C-a> <home>
-:cmap <C-e> <end>
-:imap <C-e> <ESC>$a
-:imap <C-a> <ESC>^i
+map <C-a> ^
+map <C-e> $
+cmap <C-a> <home>
+cmap <C-e> <end>
+imap <C-e> <ESC>$a
+imap <C-a> <ESC>^i
 
 "maximize windows
-:map _ <c-w>_
+map _ <c-w>_
 
 " colon commands (must start with capital letters sadly)
 command W write
