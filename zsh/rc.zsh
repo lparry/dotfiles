@@ -76,5 +76,5 @@ fi
 # make rails migration and edit the file
 function migration {
   migration_file=`script/generate migration $1 | tail -n1 | sed -e 's/create//' -e 's/ *//g'`
-  $EDITOR $migration_file
+  mvim $migration_file
 }
