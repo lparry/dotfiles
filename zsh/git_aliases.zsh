@@ -32,8 +32,12 @@ function grbo() {
   fi
 }
 
-alias gm='command git merge --no-ff'
 
+function git_merge_and_ammend() {
+command git merge --no-ff --log $argv[1] && git commit --amend
+}
+
+alias gm='git_merge_and_ammend'
 
 alias gfrpo='gfo && gst && grbo && gpo && gstp'
 alias g='git status'
