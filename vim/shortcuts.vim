@@ -62,7 +62,7 @@ vmap <Leader>q# xi#{}<esc>hp
 vmap <Leader>=> :Align =><CR>
 
 "Ack
-map <Leader>a :Ack
+map <Leader>ack :Ack
 
 "git blame
 map <Leader>g :Gblame<CR>
@@ -99,3 +99,6 @@ vnoremap / /\v
 
 " makes gf always open in a new pane
 nnoremap gf <C-W>f
+
+"NERDTree
+map <Leader>f :NERDTreeToggle<cr>
