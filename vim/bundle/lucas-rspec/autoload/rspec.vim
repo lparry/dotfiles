@@ -6,7 +6,7 @@
 
 " finds the spec related to the current file (or the current file if it is a
 " spec)
-function! SpecFileName()
+function! rspec#SpecFileName()
   let filename = getreg("%")
   if filename =~ 'spec/.*_spec\.rb$'
     return filename
@@ -22,7 +22,7 @@ function! SpecFileName()
 endfunction
 
 " works out code file related to spec, and vice versa
-function! SpecOrCodeToggle()
+function! rspec#SpecOrCodeToggle()
   let filename = getreg("%")
   if filename =~ 'spec/lib/.*_spec\.rb$'
     let filename = substitute(filename, 'spec/lib', "lib/","")
