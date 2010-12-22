@@ -19,3 +19,7 @@ alias tigs='tig status $argv'
 alias ss='unicorn_rails --config-file ~/.unicorn.rb'
 
 alias grep='echo "use ack"'
+
+alias cucumber='cucumber -r features'
+
+alias hg='nocorrect hg'
