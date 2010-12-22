@@ -1,6 +1,6 @@
 [user]
-  email = lucas@envato.com
-  name = Lucas Parry
+	email = lucas@envato.com
+	name = Lucas Parry
 [color]
   branch = auto
   diff = auto
@@ -32,4 +32,4 @@
   default = current
 [core]
   excludesfile = /Users/lparry/.gitignore
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/vim
