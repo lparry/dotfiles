@@ -84,7 +84,7 @@ vnoremap <tab> %
 map <Leader>d :bd<cr>
 
 "trying out ctrl+l = hashrocket
-imap <C-l> <Space>=><Space>"
+imap <C-l> <Space>=><Space>
 
 "disable arrow keys, so n00bs really cant use my vim :P
 nnoremap <up> <nop>
