@@ -19,5 +19,5 @@ runtime macros/matchit.vim " better pair matching for %
 " load up all my config shizzle
 source ~/.vim/functions.vim
 source ~/.vim/shortcuts.vim
-source ~/.vim/appearance.vim
 source ~/.vim/preferences.vim
+source ~/.vim/appearance.vim
