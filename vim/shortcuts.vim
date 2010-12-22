@@ -66,7 +66,7 @@ vmap <Leader>q# xi#{}<esc>hp
 vmap <Leader>=> :Align =><CR>
 
 "Ack
-map <Leader>ack :Ack
+map <Leader>ack :Ack<space>
 
 "git blame
 map <Leader>g :Gblame<CR>
