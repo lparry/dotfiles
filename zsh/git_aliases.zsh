@@ -10,7 +10,12 @@ function git() {
 
 function push_with_ci() {
   if  [[ $(current_branch) == 'master' ]] then
-    git push origin && marketplace-ci update
+    marketplace-ci status | command grep "Status: running" > /dev/null
+    if [[ $? != 0 ]] then
+      git push origin && marketplace-ci update
+    else
+      git push origin
+    fi
   else
     git push origin
   fi
