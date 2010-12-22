@@ -87,14 +87,14 @@ map <Leader>d :bd<cr>
 imap <C-l> <Space>=><Space>
 
 "disable arrow keys, so n00bs really cant use my vim :P
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 "apparently these two lines make vim use normal regex, sadly i know a mangle
 "of vim and perl regex so it's gonna hurt for a bit
