@@ -44,6 +44,9 @@ command git merge --no-ff --log $argv[1] && git commit --amend
 
 alias gm='git_merge_and_ammend'
 
+alias grb-no-merges='command git rebase origin/`current_branch`'
+alias grba='command git rebase --abort'
+alias grbc='command git rebase --continue'
 alias gfrpo='gfo && gst && grbo && gpo && gstp'
 alias g='git status'
 alias ga='git add'
@@ -83,6 +86,7 @@ alias graf='git remote add $argv[1] $argv[2] && gf $argv[1]'
 alias grbc='command git rebase --continue'
 alias grbi='grb -i'
 alias grh='git reset --hard'
+alias grho='git reset --hard origin/`current_branch`'
 alias grl='git reflog'
 alias grp='gr --patch'
 alias grs='git reset --soft'
