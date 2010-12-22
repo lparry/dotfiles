@@ -39,6 +39,10 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
 let mapleader = ","
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
