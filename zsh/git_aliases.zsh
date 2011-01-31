@@ -44,7 +44,9 @@ command git merge --no-ff --log $argv[1] && git commit --amend
 
 alias gm='git_merge_and_ammend'
 
+alias gbr-merged-branches='gfo --prune && gfo && gco master && grbo && gbr -a --merged'
 alias grb-no-merges='command git rebase origin/`current_branch`'
+alias gup='git smart-pull'
 alias grba='command git rebase --abort'
 alias grbc='command git rebase --continue'
 alias gfrpo='gfo && gst && grbo && gpo && gstp'
