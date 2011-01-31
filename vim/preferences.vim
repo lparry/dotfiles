@@ -43,3 +43,4 @@ autocmd BufReadPost *
 
 autocmd BufRead .bash_local set syntax=config
 autocmd BufNewFile,BufRead *.zsh*  setfiletype zsh
+autocmd BufWritePre * call TidyWhiteSpace()
