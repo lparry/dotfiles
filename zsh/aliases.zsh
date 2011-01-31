@@ -23,3 +23,6 @@ alias grep='echo "use ack"'
 alias cucumber='cucumber -r features'
 
 alias hg='nocorrect hg'
+
+alias spec='bundle exec spec'
+alias rake='bundle exec rake'
