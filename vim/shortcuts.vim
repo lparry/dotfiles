@@ -51,7 +51,7 @@ map <Leader>W :call TidyWhiteSpaceAggressive()<CR>
 map <leader>i ggVG=
 map <Leader>s :!spec -f n <C-R>=rspec#SpecFileName() <CR> 2> /dev/null <CR>
 map <Leader>S :!spec -f n <C-R>=rspec#SpecFileName() <CR> <CR>
-map <Leader>j :vs <C-R>=rspec#SpecOrCodeToggle() <CR> <CR>
+map <Leader>j :silent vs <C-R>=rspec#SpecOrCodeToggle() <CR> <CR>
 map <Leader>cuke mcggVG=:%s/^\(\s*\)And/\1  And/<cr>:%s/^\(\s*\)Then/\1 Then/<cr>:%s/^\(\s*\)When/\1 When/<cr>,<space>`c
 
 "surrounding highlighted strings
@@ -82,6 +82,9 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 map <Leader>d :bd<cr>
+map <Leader>D :bd!<cr>
+
+map <Leader>= <C-W>=
 
 "trying out ctrl+l = hashrocket
 imap <C-l> <Space>=><Space>
@@ -98,11 +101,18 @@ imap <C-l> <Space>=><Space>
 
 "apparently these two lines make vim use normal regex, sadly i know a mangle
 "of vim and perl regex so it's gonna hurt for a bit
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 
 " makes gf always open in a new pane
 nnoremap gf <C-W>f
 
 "NERDTree
 map <Leader>f :NERDTreeToggle<cr>
+
+
+inoremap do<CR> do<CR>end<ESC>O
+
+noremap <C-l> :bn<cr>
+noremap <C-h> :bp<cr>
+noremap <C-j> :buffers<cr>
