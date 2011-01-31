@@ -38,3 +38,8 @@ highlight CursorColumn ctermbg=none cterm=underline gui=underline
 set cursorcolumn
 set cursorline
 highlight LineNr ctermfg=gray
+
+"macvim transparancy
+if has("gui_running")
+  set transp=20
+endif
