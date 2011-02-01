@@ -26,7 +26,17 @@ set tags=./tags;
 
 set hidden "allow buffers to be hidden without writing to disk
 
-set wildmode=list:longest " better filename completion
+set wildmenu
+set wildmode=list:longest,full " better filename completion
+
+" mouse works everywhere
+set mouse=a
+
+" make command timeout shorter
+set timeoutlen=500
+
+"dont slow down because of stupidly long syntax shizzle
+set synmaxcol=2048
 
 set directory=~/tmp//
 
