@@ -31,8 +31,9 @@ export EDITOR='/usr/bin/vim'
 export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin"
 export MANPATH="/usr/local/share/man:/usr/X11/man:/usr/share/man"
 export TERM=xterm-256color
-export ACK_OPTIONS='--smart-case'
 
+# Make ack ignore sql dumps, and search cucumber features.
+export ACK_OPTIONS="--smart-case --nosql --type-set cucumber=.feature --type-set sass=.sass"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
@@ -71,7 +72,6 @@ if [[ `hostname -s` = 'lucas' ]]; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 
 # make rails migration and edit the file
 function migration {
