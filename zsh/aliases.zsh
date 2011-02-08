@@ -15,10 +15,9 @@ alias reload_webkit='osascript -e 'tell application "WebKit" to do JavaScript "w
 alias restart_rails_app='touch tmp/restart.txt; reload_webkit'
 alias tigs='tig status $argv'
 
-
 alias ss='unicorn_rails --config-file ~/.unicorn.rb'
 
-alias grep='echo "use ack"'
+#alias grep='echo "use ack"'
 
 alias cucumber='cucumber -r features'
 
