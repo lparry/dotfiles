@@ -21,6 +21,10 @@ function push_with_ci() {
   fi
 }
 
+function gco() {
+  git checkout $argv  && freshen_ctags.sh
+}
+
 function grbo() {
   if [[ $(git status -s -uno) == '' ]] then
     clean=1
@@ -61,7 +65,6 @@ alias gcam='gca --amend'
 alias gcf='git config -l'
 alias gch='git cherry-pick'
 alias gcm='gc --amend'
-alias gco='git checkout'
 alias gcop='gco -p'
 alias gd='git diff -M'
 #alias gd='git diff -M --color-words="."'
