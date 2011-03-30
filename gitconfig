@@ -5,6 +5,7 @@
   branch = auto
   diff = auto
   status = auto
+  ui = always
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -26,6 +27,9 @@
   ignored = "!git ls-files --others --exclude-standard"
   st = status
   co = checkout
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
 [merge]
   tool = opendiff
 [push]
