@@ -11,7 +11,7 @@ function cd() {
   builtin cd "$@" && ls && git_status_if_git_dir
 }
 
-. ~/dotfiles/tools/z-zsh/z.sh
+. ~/Dropbox/dotfiles/tools/z-zsh/z.sh
 function precmd () {
   z --add "$(pwd -P)"
 }

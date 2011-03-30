@@ -8,6 +8,8 @@ alias s='git status $argv; return 0'
 alias d='gd $argv'
 alias m='mvim $argv'
 
+alias :q='exit'
+
 alias df='df -kh $argv'
 alias du='du -k -d 1 $argv'
 alias ho='git push heroku master $argv'
@@ -25,3 +27,4 @@ alias hg='nocorrect hg'
 
 alias spec='bundle exec spec'
 alias rake='bundle exec rake'
+alias cap='bundle exec cap'
