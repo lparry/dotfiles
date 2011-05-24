@@ -68,7 +68,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 if [[ `hostname -s` = 'lucas' ]]; then
   ## at work
-  cd dev/marketplace
+  cd dev/envato/marketplace
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
