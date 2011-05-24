@@ -1,6 +1,6 @@
 [user]
-	email = lucas@envato.com
-	name = Lucas Parry
+  email = lucas@envato.com
+  name = Lucas Parry
 [color]
   branch = auto
   diff = auto
@@ -20,7 +20,7 @@
   changed = green
   untracked = cyan
 [apply]
-  whitespace = nowarn
+  whitespace = fix
 [branch]
   autosetupmerge = true
 [alias]
@@ -31,9 +31,13 @@
   type = cat-file -t
   dump = cat-file -p
 [merge]
-  tool = opendiff
+	tool = p4merge
 [push]
   default = current
 [core]
   excludesfile = /Users/lparry/.gitignore
   editor = /usr/local/bin/vim
+[rerere]
+  enabled = true
+[diff]
+  #external = /Users/lparry/opendiff-git.sh
