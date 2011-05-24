@@ -15,6 +15,7 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 
 " backup files
 set nobackup
+set backupskip=/tmp/*,/private/tmp/*"
 
 " tabs
 set expandtab " use spaces when <Tab> is inserted
@@ -29,8 +30,12 @@ set hidden "allow buffers to be hidden without writing to disk
 set wildmenu
 set wildmode=list:longest,full " better filename completion
 
-" mouse works everywhere
-set mouse=a
+" mouse works in insert mode
+if has("gui_running")
+  set mouse=a
+else
+  set mouse=i
+endif
 
 " make command timeout shorter
 set timeoutlen=500
@@ -54,3 +59,6 @@ autocmd BufReadPost *
 autocmd BufRead .bash_local set syntax=config
 autocmd BufNewFile,BufRead *.zsh*  setfiletype zsh
 autocmd BufWritePre * call TidyWhiteSpace()
+
+"save on focus loss
+au FocusLost,TabLeave * call feedkeys("\<C-\>\<C-n>:silent! wall\<cr>")
