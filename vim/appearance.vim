@@ -2,7 +2,7 @@
 syntax on
 
 if has("gui_running")
-  set background=light
+  set background=dark
 else
   set background=dark
 endif
@@ -28,18 +28,25 @@ set nolist!
 set laststatus=2
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [format:%{&ff}]\ [type:%y]\ [ascii:\%03.3b]\ [hex:\%02.2B]\ [pos:%l,%v][%p%%]\ [len:%L]
 
-colorscheme railscasts
+"colorscheme
+let g:solarized_visibility = "high"
+let g:solarized_termcolors = 256
+colorscheme solarized
+
 "make visual mode stand out better
 highlight Visual guibg=#FF0000 ctermbg=60
 highlight Search guifg=NONE ctermfg=NONE guibg=#990000 ctermbg=235 gui=italic cterm=underline
+
 " line and column makers
-highlight CursorLine ctermbg=none cterm=underline gui=underline
-highlight CursorColumn ctermbg=none cterm=underline gui=underline
+"highlight CursorLine ctermbg=none cterm=underline gui=underline
+"highlight CursorColumn ctermbg=none cterm=underline gui=underline
+highlight CursorLine ctermbg=none cterm=none gui=none
+highlight CursorColumn ctermbg=none cterm=none gui=none
 set cursorcolumn
 set cursorline
 highlight LineNr ctermfg=gray
 
 "macvim transparancy
 if has("gui_running")
-  set transp=20
+  set transp=0
 endif
