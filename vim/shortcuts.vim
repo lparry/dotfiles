@@ -17,6 +17,10 @@ cmap <C-e> <end>
 imap <C-e> <ESC>$a
 imap <C-a> <ESC>^i
 
+"reselect selection after altering indent
+vmap > >gv
+vmap < <gv
+
 "maximize windows
 map _ <c-w>_
 
