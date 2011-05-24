@@ -7,10 +7,7 @@ set nocompatible
 set shell=/bin/bash
 
 " Pathogen this shit UP!
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
+call pathogen#infect()
 
 " load some plugins manually
 runtime macros/matchit.vim " better pair matching for %
