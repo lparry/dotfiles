@@ -73,7 +73,7 @@ vmap <Leader>=> :Align =><CR>
 map <Leader>ack :Ack<space>
 
 "git blame
-map <Leader>g :Gblame<CR>
+map <Leader>g :Gblame -C<CR>
 
 "replace 'blah' with '"blah: #{blah}"'
 vmap <Leader>qd xi"<esc>pi: <right>#{}"<esc>hhp
