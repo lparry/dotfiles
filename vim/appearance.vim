@@ -10,7 +10,7 @@ endif
 "256 color terminal support (ie. iTerm.app on osx)
 set t_Co=256
 
-set guifont=Inconsolata:h18
+set guifont=Inconsolata-dz:h12
 
 set wrap
 set number " line numbers

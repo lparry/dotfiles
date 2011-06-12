@@ -62,3 +62,11 @@ autocmd BufWritePre * call TidyWhiteSpace()
 
 "save on focus loss
 au FocusLost,TabLeave * call feedkeys("\<C-\>\<C-n>:silent! wall\<cr>")
+
+"js is retarded, let it have it's shitty 4 space tabs
+autocmd FileType javascript set sw=4
+autocmd FileType javascript set ts=4
+autocmd FileType javascript set sts=4
+
+"auto equalize split on window resize
+au VimResized * exe "normal \<c-w>="
