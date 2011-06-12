@@ -25,6 +25,6 @@ alias cucumber='cucumber -r features'
 
 alias hg='nocorrect hg'
 
-alias spec='bundle exec spec'
-alias rake='bundle exec rake'
-alias cap='bundle exec cap'
+alias spec='bundle_when_gemfile_exists spec'
+alias rake='bundle_when_gemfile_exists rake'
+alias cap='bundle_when_gemfile_exists cap'

@@ -19,3 +19,11 @@ function precmd () {
 function git-branch-owners() {
   git branch $@ |grep -v 'HEAD' | sed -e 's/  \(.*\)/echo `git show --pretty=format:"%an" "\1" |head -n1` - \1 /'|sh
 }
+
+function bundle_when_gemfile_exists() {
+  if [ -f Gemfile ] ; then
+    bundle exec $*
+  else
+    $*
+  fi
+}
