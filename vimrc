@@ -9,6 +9,8 @@ set shell=/bin/bash
 " Pathogen this shit UP!
 call pathogen#infect()
 
+call pathogen#infect('ppm') " load pathogem plugin manager infections too
+
 " load some plugins manually
 runtime macros/matchit.vim " better pair matching for %
 "source ~/.vim/bundle/lucas-rspec/autoload/rspec.vim
