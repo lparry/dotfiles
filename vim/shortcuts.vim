@@ -127,3 +127,6 @@ nmap <Up> <C-W><Up>
 nmap <Down> <C-W><Down>
 nmap <Left> <C-W><Left>
 nmap <Right> <C-W><Right>
+
+map <C-n> :bn<cr>
+map <C-p> :bp<cr>
