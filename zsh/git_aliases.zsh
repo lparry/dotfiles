@@ -1,13 +1,5 @@
 export git_concise_log_format='--pretty=format:%Cblue%h%d%Creset %cr %Cgreen%an%Creset %s'
 
-function git() {
-  if [[ $argv[1] = 'merge' || $argv[1] = 'rebase' ]] then
-    echo "use aliases"
-  else
-    command git $argv
-  fi
-}
-
 function push_with_ci() {
   if  [[ $(current_branch) == 'master' ]] then
     marketplace-ci status | command grep "Status: running" > /dev/null
