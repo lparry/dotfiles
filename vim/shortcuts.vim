@@ -4,6 +4,8 @@
 map <F5> :setlocal spell! spelllang=en_au<cr>
 imap <F5> <ESC>:setlocal spell! spelllang=en_au<cr>
 
+imap jj <ESC>
+
 map <F6> :call rainbow_parentheses#Toggle()<cr>
 
 map <C-n> :cn

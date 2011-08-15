@@ -23,3 +23,4 @@ export DISABLE_AUTO_UPDATE=true
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
