@@ -30,6 +30,9 @@ set hidden "allow buffers to be hidden without writing to disk
 set wildmenu
 set wildmode=list:longest,full " better filename completion
 
+" use the osx clipboard
+set clipboard=unnamed
+
 " mouse works in insert mode
 "if has("gui_running")
 set mouse=a
