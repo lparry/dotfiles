@@ -6,7 +6,7 @@ alias lal='ls -lah'
 
 alias s='git status $argv; return 0'
 alias d='gd $argv'
-alias m='mvim $argv'
+alias m='cd ~/dev/envato/marketplace'
 
 alias :q='exit'
 
