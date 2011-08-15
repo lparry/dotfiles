@@ -19,6 +19,7 @@ export ZSH_THEME="lucas"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rails ruby osx)
 
+export DISABLE_AUTO_UPDATE=true
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
