@@ -31,7 +31,9 @@
   type = cat-file -t
   dump = cat-file -p
 [merge]
-	tool = p4merge
+  tool = vimdiff
+  #tool = vimdiff
+  ff = false
 [push]
   default = current
 [core]
