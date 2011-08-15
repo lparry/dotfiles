@@ -67,11 +67,6 @@ compinit -C
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-if [[ `hostname -s` = 'lucas' ]]; then
-  ## at work
-  cd dev/envato/marketplace
-fi
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # make rails migration and edit the file
