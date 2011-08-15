@@ -1,1 +1,15 @@
---ignore-dir=rails --ruby
+--ruby
+--no-head
+-type-add
+ruby=.rake
+--type-add
+css=.sass,.scss
+--type-set
+markdown=.markdown,.md,.mdown
+--type-set
+cucumber=.feature
+--ruby
+--css
+--js
+--markdown
+--cucumber
