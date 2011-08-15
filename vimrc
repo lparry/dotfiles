@@ -7,8 +7,8 @@ set nocompatible
 set shell=/bin/bash
 
 " Pathogen this shit UP!
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-
 call pathogen#infect('ppm') " load pathogem plugin manager infections too
 
 " load some plugins manually
