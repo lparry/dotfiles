@@ -73,3 +73,6 @@ autocmd FileType javascript set sts=4
 
 "auto equalize split on window resize
 au VimResized * exe "normal \<c-w>="
+
+" show the 80 column marker
+set colorcolumn=80
