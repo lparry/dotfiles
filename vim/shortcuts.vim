@@ -121,3 +121,9 @@ inoremap do<CR> do<CR>end<ESC>O
 noremap <C-l> :bn<cr>
 noremap <C-h> :bp<cr>
 noremap <C-j> :buffers<cr>
+
+" Arrow keys navigate split windows!
+nmap <Up> <C-W><Up>
+nmap <Down> <C-W><Down>
+nmap <Left> <C-W><Left>
+nmap <Right> <C-W><Right>
