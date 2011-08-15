@@ -31,11 +31,11 @@ set wildmenu
 set wildmode=list:longest,full " better filename completion
 
 " mouse works in insert mode
-if has("gui_running")
-  set mouse=a
-else
-  set mouse=i
-endif
+"if has("gui_running")
+set mouse=a
+"else
+"  set mouse=i
+"endif
 
 " make command timeout shorter
 set timeoutlen=500
