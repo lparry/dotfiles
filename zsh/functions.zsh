@@ -27,3 +27,9 @@ function bundle_when_gemfile_exists() {
     $*
   fi
 }
+
+# cause the way ssh-agent works is kind of shit tbh
+function ssh-agent() {
+  eval `command ssh-agent`
+  ssh-add
+}
