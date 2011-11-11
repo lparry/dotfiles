@@ -21,7 +21,9 @@ setopt correct                 # spelling correction
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
-. ~/.zsh/gnu-coreutils.zsh
+if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
+  . ~/.zsh/gnu-coreutils.zsh
+fi
 . ~/.zsh/prompt.zsh
 . ~/.zsh/aliases.zsh
 . ~/.zsh/git_aliases.zsh
@@ -82,3 +84,4 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500
 
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules

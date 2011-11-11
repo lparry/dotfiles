@@ -1,6 +1,6 @@
 export git_concise_log_format='--pretty=format:%Cblue%h%d%Creset %cr %Cgreen%an%Creset %s'
 
-function push_with_ci() {
+function push_with_ci {
   if  [[ $(current_branch) == 'master' ]] then
     marketplace-ci status | command grep "Status: running" > /dev/null
     if [[ $? != 0 ]] then
@@ -13,11 +13,11 @@ function push_with_ci() {
   fi
 }
 
-function gco() {
+function gco {
   git checkout $argv  && freshen_ctags.sh
 }
 
-function grbo() {
+function grbo {
   if [[ $(git status -s -uno) == '' ]] then
     clean=1
   else
@@ -33,8 +33,16 @@ function grbo() {
   fi
 }
 
-function git_merge_and_ammend() {
-command git merge --no-ff $argv[1] && git commit --amend
+function gcob {
+  command git checkout -pb $argv[1] --track origin/$argv[1]
+}
+
+function git_merge_and_ammend {
+  command git merge --no-ff $argv[1] && git commit --amend
+}
+
+function github_link {
+  echo https://github.com/envato/marketplace/tree/`current_branch`
 }
 
 alias gm='git_merge_and_ammend'
@@ -69,14 +77,14 @@ alias gf='git fetch'
 alias gfo='git fetch origin && git fetch origin --tags'
 alias glp='git log -p --color-words -w'
 alias gl2='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short --all'
-alias gl='git log --pretty=format:"%Cblue%h%d%Creset %ar %Cgreen%an%Creset %s" --graph'
+alias gl='git log --graph --pretty=format:"%Cblue%h%d%Creset %ar %Cgreen%an%Creset %s%Creset"'
 alias glc='git log $git_concise_log_format'
 alias glcg='glc --graph'
 alias gmd='gm $argv && gbr -d $argv $argv && glcg'
 alias gp='git push'
 alias gpb='git push banana'
 alias gpd='gp deploy deploy'
-alias gpo='push_with_ci'
+alias gpo='git push origin && github_link'
 alias gpom='git push origin master'
 alias gpt='gp --tags'
 alias gr='git reset'

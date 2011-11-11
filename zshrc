@@ -24,3 +24,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+if [[ `hostname` == 'lucas-vm' ]]; then
+  cd ~/dev/envato/tango_steps
+fi

@@ -10,7 +10,7 @@ endif
 "256 color terminal support (ie. iTerm.app on osx)
 set t_Co=256
 
-set guifont=Inconsolata-dz:h12
+set guifont=monofur:h16
 
 set wrap
 set number " line numbers
@@ -31,6 +31,7 @@ set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [format:%{&ff}]\ [type:%y]\
 "colorscheme
 let g:solarized_visibility = "high"
 let g:solarized_termcolors = 256
+let g:solarized_italic    =  0
 colorscheme solarized
 
 "make visual mode stand out better

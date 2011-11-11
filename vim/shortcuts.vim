@@ -60,6 +60,9 @@ map <Leader>S :!clear && bundle exec spec -f n <C-R>=rspec#SpecFileName() <CR> <
 map <Leader>j :silent vs <C-R>=rspec#SpecOrCodeToggle() <CR> <CR>
 map <Leader>cuke mcggVG=:%s/^\(\s*\)And/\1  And/<cr>:%s/^\(\s*\)Then/\1 Then/<cr>:%s/^\(\s*\)When/\1 When/<cr>,<space>`c
 
+" ,o to open related file in new tab
+map <leader>o <c-w>f<c-w>T
+
 "surrounding highlighted strings
 vmap <Leader>q" xi""<esc>hp
 vmap <Leader>q' xi''<esc>hp
@@ -130,3 +133,7 @@ nmap <Right> <C-W><Right>
 
 map <C-n> :bn<cr>
 map <C-p> :bp<cr>
+
+" Gary Bernhardt's inline and extract variable functions
+vnoremap <leader>rv :call ExtractVariable()<cr>
+nnoremap <leader>ri :call InlineVariable()<cr>

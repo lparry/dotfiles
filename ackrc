@@ -13,3 +13,5 @@ cucumber=.feature
 --js
 --markdown
 --cucumber
+--type-add
+ruby=.coffee
