@@ -22,9 +22,15 @@ plugins=(git rails ruby osx)
 export DISABLE_AUTO_UPDATE=true
 source $ZSH/oh-my-zsh.sh
 
+export RUBY_GC_MALLOC_LIMIT=64000000
+
 # Customize to your needs...
 source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [[ `hostname` == 'lucas-vm' ]]; then
   cd ~/dev/envato/tango_steps
+fi
+
+if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
+  fortune | cowsay | lolcat
 fi

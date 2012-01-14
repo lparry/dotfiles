@@ -85,3 +85,5 @@ export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500
 
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+
+export local_development_domain=".dev"
