@@ -3,13 +3,13 @@
 " konqterm == shell within vim
 "
 set nocompatible
-
+filetype off
 set shell=/bin/bash
+set guifont=Menlo\ Regular\ for\ Powerline:h14
 
-" Pathogen this shit UP!
-source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#infect('ppm') " load pathogem plugin manager infections too
+" vundle bundles!
+source ~/.vim/vundle.vim
+
 
 " load some plugins manually
 runtime macros/matchit.vim " better pair matching for %
