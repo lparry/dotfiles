@@ -8,7 +8,7 @@ function git_status_if_git_dir() {
 }
 
 function cd() {
-  builtin cd "$@" && ls && git_status_if_git_dir
+  builtin cd "$@" && ls -F --color=tty && git_status_if_git_dir
 }
 
 function git-branch-owners() {
@@ -16,11 +16,11 @@ function git-branch-owners() {
 }
 
 function bundle_when_gemfile_exists() {
-  if [ -f Gemfile ] ; then
-    bundle exec $*
-  else
+#  if [ -f Gemfile ] ; then
+#    bundle exec $*
+#  else
     $*
-  fi
+#  fi
 }
 
 # cause the way ssh-agent works is kind of shit tbh

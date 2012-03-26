@@ -1,4 +1,13 @@
 . ~/.zsh/rc.zsh
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# use gnu coreutils where available
+if [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -34,3 +43,13 @@ fi
 if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
   fortune | cowsay | lolcat
 fi
+
+
+# ruby tuning
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
+
+export PATH=./bin/:$PATH
