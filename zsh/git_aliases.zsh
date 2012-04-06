@@ -8,8 +8,12 @@ function git_merge_and_amend {
   command git merge --no-ff $argv[1] && git commit --amend
 }
 
+function current_remote {
+  echo ${${$(git config remote.origin.url)#*github.com:}%.*}
+}
+
 function github_link {
-  echo https://github.com/envato/marketplace/tree/`current_branch`
+  echo https://github.com/`current_remote`/tree/`current_branch`
 }
 
 alias gm='git_merge_and_amend'
