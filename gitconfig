@@ -33,7 +33,7 @@
 [merge]
   tool = vimdiff
   #tool = vimdiff
-  ff = false
+  #ff = false
 [push]
   default = current
 [core]
