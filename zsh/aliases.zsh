@@ -1,5 +1,5 @@
 alias l='ls'
-alias ls='ls -GF'
+alias ls='ls -GF --color=tty'
 alias ll='ls -lh'
 alias la='ls -a'
 alias lal='ls -lah'
@@ -42,3 +42,4 @@ alias b='bundle exec'
 alias c='bundle exec cucumber'
 alias s='bundle exec spec'
 alias git=hub
+compdef hub=git
