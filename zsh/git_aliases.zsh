@@ -4,22 +4,6 @@ function gco {
   git checkout $argv  && freshen_ctags.sh
 }
 
-function grbo {
-  if [[ $(git status -s -uno) == '' ]] then
-    clean=1
-  else
-    clean=0
-  fi
-
-  if [[ $clean == 0 ]] then
-    git stash
-  fi
-  command git rebase --preserve-merges origin/`current_branch`
-  if [[ $clean == 0 ]] then
-    git stash pop
-  fi
-}
-
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
 #
