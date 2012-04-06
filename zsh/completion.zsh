@@ -20,3 +20,12 @@ zstyle ':completion:*:hosts' hosts $hosts
 # Use caching so that commands like apt and dpkg complete are useable
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path /tmp/
+
+## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+fpath=(~/.zsh/completions $fpath)
+
+#autoload -Uz compinit
+autoload -U compinit
+compinit -C

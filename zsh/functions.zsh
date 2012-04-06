@@ -7,6 +7,12 @@ function git_status_if_git_dir() {
   fi
 }
 
+# make rails migration and edit the file
+function migration {
+  migration_file=`script/generate migration $1 | tail -n1 | sed -e 's/create//' -e 's/ *//g'`
+  mvim $migration_file
+}
+
 function cd() {
   builtin cd "$@" && ls && git_status_if_git_dir
 }
