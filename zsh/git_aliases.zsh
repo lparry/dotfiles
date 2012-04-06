@@ -12,11 +12,6 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
-
-function gcob {
-  command git checkout -pb $argv[1] --track origin/$argv[1]
-}
-
 function git_merge_and_ammend {
   command git merge --no-ff $argv[1] && git commit --amend
 }
