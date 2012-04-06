@@ -24,11 +24,11 @@ zstyle ':completion::complete:*' cache-path /tmp/
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-fpath=(~/.zsh/completions $fpath)
+fpath=(~/.zsh/completion $fpath)
 
 #autoload -Uz compinit
 autoload -U compinit
-compinit -C
+compinit -i
 
 compdef _git gco=git-checkout
 compdef _git gm=git-merge
