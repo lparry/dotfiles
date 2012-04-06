@@ -16,6 +16,7 @@ function push_with_ci {
 function gco {
   git checkout $argv  && freshen_ctags.sh
 }
+compdef _git gco=git-checkout
 
 function grbo {
   if [[ $(git status -s -uno) == '' ]] then
