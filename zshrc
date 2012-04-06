@@ -22,6 +22,7 @@ unsetopt autocd                  # change to dirs without cd
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
+for config_file ($HOME/.zsh/plugins/*.zsh) source $config_file
 for config_file ($HOME/.zsh/*.zsh) source $config_file
 
 
