@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+cows = %w[beavis.zen bud-frogs bunny cheese cower daemon default dragon
+dragon-and-cow elephant  eyes flaming-sheep ghostbusters
+ hellokitty kiss kitty koala kosh luke-koala meow milk moofasa moose
+mutilated ren satanic sheep skeleton small stegosaurus stimpy
+supermilker surgery three-eyes turkey turtle tux udder vader
+vader-koala www]
+puts `cowsay -f #{cows.shuffle.first} #{$*.join(" ")}`
+
