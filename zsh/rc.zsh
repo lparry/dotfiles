@@ -21,6 +21,9 @@ setopt correct                 # spelling correction
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
+autoload -U compinit
+compinit
+
 if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
   . ~/.zsh/gnu-coreutils.zsh
 fi
