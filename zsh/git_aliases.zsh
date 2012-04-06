@@ -1,18 +1,5 @@
 export git_concise_log_format='--pretty=format:%Cblue%h%d%Creset %cr %Cgreen%an%Creset %s'
 
-function push_with_ci {
-  if  [[ $(current_branch) == 'master' ]] then
-    marketplace-ci status | command grep "Status: running" > /dev/null
-    if [[ $? != 0 ]] then
-      git push origin && marketplace-ci update
-    else
-      git push origin
-    fi
-  else
-    git push origin
-  fi
-}
-
 function gco {
   git checkout $argv  && freshen_ctags.sh
 }
