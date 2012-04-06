@@ -21,19 +21,34 @@ setopt correct                 # spelling correction
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
-autoload -U compinit
-compinit
 
-if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
-  . ~/.zsh/gnu-coreutils.zsh
-fi
-. ~/.zsh/prompt.zsh
+#fpath=($ZSH/functions $ZSH/completions $fpath)
+
+# Load all of the config files in ~/oh-my-zsh that end in .zsh
+# TIP: Add files you don't want in git to .gitignore
+for config_file (~/.zsh/completion/*.zsh) source $config_file
+fpath=(~/.zsh/completions $fpath)
+. ~/.zsh/completion.zsh
+## Completions
+autoload -Uz compinit
+autoload -U compinit
+compinit -C
+
 . ~/.zsh/aliases.zsh
-. ~/.zsh/git_aliases.zsh
 . ~/.zsh/functions.zsh
+. ~/.zsh/git_functions.zsh
+. ~/.zsh/git_aliases.zsh
+. ~/.zsh/prompt.zsh
+. ~/.zsh/rbenv.zsh
+. ~/.zsh/themes/lucas.zsh
 
 export EDITOR='/usr/bin/vim'
 export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:$PATH"
+
+# safe binstubs on path
+export PATH=".git/safe/../../bin:$PATH"
+
+
 export MANPATH="/usr/local/share/man:/usr/X11/man:/usr/share/man"
 export TERM=xterm-256color
 export NUM_SWARM_DRONES=8
@@ -50,10 +65,8 @@ unsetopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/lparry/.zshrc'
+#zstyle :compinstall filename '/Users/lparry/.zshrc'
 
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 
 export WORDCHARS='*?_[]~=&;!#$%^(){}'
@@ -65,9 +78,6 @@ bindkey '^' self-insert-backslash
 function self-insert-backslash() { LBUFFER+='\'; zle .self-insert }
 zle -N self-insert-backslash
 
-## Completions
-autoload -U compinit
-compinit -C
 
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

@@ -4,6 +4,8 @@ alias ll='ls -lh'
 alias la='ls -a'
 alias lal='ls -lah'
 
+alias tree='tree -C'
+
 alias s='git status $argv; return 0'
 alias d='gd $argv'
 alias m='cd ~/dev/envato/marketplace'
