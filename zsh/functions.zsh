@@ -8,7 +8,7 @@ function git_status_if_git_dir() {
 }
 
 function cd() {
-  builtin cd "$@" && ls -F --color=tty && git_status_if_git_dir
+  builtin cd "$@" && ls && git_status_if_git_dir
 }
 
 function git-branch-owners() {
