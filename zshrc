@@ -1,47 +1,45 @@
-. ~/.zsh/rc.zsh
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt extendedglob notify
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+setopt prompt_subst
+setopt hist_ignore_dups
+setopt autopushd               # automatically append dirs to the push/pop list
+setopt nobeep                  # i hate beeps
+#setopt printexitvalue          # alert me if something's failed
+setopt correct                 # spelling correction
+
+unsetopt autocd                  # change to dirs without cd
+# setopt listpacked              # compact completion lists
+# setopt listtypes               # show types in completion
+# setopt extendedglob            # weird & wacky pattern matching - yay zsh!
+# setopt nopromptcr              # don't add \r which overwrites cmd output with no \n
+# setopt histverify              # when using ! cmds, confirm first
+# setopt interactivecomments     # escape commands so i can use them later
+# setopt recexact                # recognise exact, ambiguous matches
+
+for config_file ($HOME/.zsh/*.zsh) source $config_file
 
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#bindkey '[D' emacs-backward-word
+#bindkey '[C' emacs-forward-word
 
-# use gnu coreutils where available
-if [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-fi
-
-### rehome this oh-my-zsh stuff
-
-
-source ~/.zsh/completion.zsh
-source ~/.zsh/git_functions.zsh
-source ~/.zsh/themes/lucas.zsh
-
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
-
-
-#### end stuff
+# bindkey '^' self-insert-backslash
+# function self-insert-backslash() { LBUFFER+='\'; zle .self-insert }
+# zle -N self-insert-backslash
 
 source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-if [[ `hostname` == 'lucas-vm' ]]; then
-  cd ~/dev/envato/tango_steps
-fi
 
-if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
-fi
+# if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
+# fi
 
-export PATH=~/Dropbox/dotfiles/bin:$PATH
+
+eval "$(rbenv init -)"
 
 fortune | cowrand | lolcat
 
-# ruby tuning
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-#export RUBY_GC_MALLOC_LIMIT=64000000
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
-
-#export PATH=./bin/:$PATH
-export BUNDLE_PATH=vendor/bundle-$(hostname)
