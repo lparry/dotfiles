@@ -1,6 +1,6 @@
 [user]
-	email = lucas@envato.com
-	name = Lucas Parry
+  email = lucas@envato.com
+  name = Lucas Parry
 [color]
   branch = auto
   diff = auto
@@ -37,14 +37,14 @@
 [push]
   default = current
 [core]
-	excludesfile = /Users/lparry/.gitignore
+  excludesfile = /Users/lparry/.gitignore
   editor = /usr/local/bin/vim
 [rerere]
   enabled = true
 [diff]
   #external = /Users/lparry/opendiff-git.sh
 [github]
-	user = lparry
+  user = lparry
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
