@@ -30,7 +30,7 @@ fi
 . ~/.zsh/functions.zsh
 
 export EDITOR='/usr/bin/vim'
-export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin"
+export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:$PATH"
 export MANPATH="/usr/local/share/man:/usr/X11/man:/usr/share/man"
 export TERM=xterm-256color
 export NUM_SWARM_DRONES=8
