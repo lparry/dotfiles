@@ -4,14 +4,6 @@ function gco {
   git checkout $argv  && freshen_ctags.sh
 }
 
-# Will return the current branch name
-# Usage example: git pull origin $(current_branch)
-#
-function current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
-}
-
 function git_merge_and_ammend {
   command git merge --no-ff $argv[1] && git commit --amend
 }

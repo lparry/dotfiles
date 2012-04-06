@@ -36,11 +36,10 @@ for config_file ($HOME/.zsh/*.zsh) source $config_file
 source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-# if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
-# fi
 
 
 eval "$(rbenv init -)"
 
+# if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
 fortune | cowrand | lolcat
-
+# fi
