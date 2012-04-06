@@ -44,4 +44,3 @@ alias b='bundle exec'
 alias c='bundle exec cucumber'
 alias s='bundle exec spec'
 alias git=hub
-compdef hub=git

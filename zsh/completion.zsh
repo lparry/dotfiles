@@ -29,3 +29,19 @@ fpath=(~/.zsh/completions $fpath)
 #autoload -Uz compinit
 autoload -U compinit
 compinit -C
+
+compdef _git gco=git-checkout
+compdef _git gm=git-merge
+compdef _git g=git-status
+compdef _git ga=git-add
+compdef _git gbr=git-branch
+compdef _git gc=git-commit
+compdef _git gca=git-commit
+compdef _git gd=git-diff
+compdef _git gf=git-fetch
+compdef _git glp=git-log
+compdef _git gl2=git-log
+compdef _git gl=git-log
+compdef _git glc=git-log
+compdef _git glcg=git-log
+compdef hub=git
