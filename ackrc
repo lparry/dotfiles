@@ -1,5 +1,4 @@
---ruby
---no-head
+--no-group
 -type-add
 ruby=.rake
 --type-add
@@ -8,10 +7,13 @@ css=.sass,.scss
 markdown=.markdown,.md,.mdown
 --type-set
 cucumber=.feature
---ruby
+--type-add
+ruby=.coffee
+--type-set
+zsh=.zsh
+--zsh
 --css
+--ruby
 --js
 --markdown
 --cucumber
---type-add
-ruby=.coffee
