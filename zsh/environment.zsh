@@ -43,8 +43,5 @@ fi
 
 export PATH="$HOME/bin:$HOME/Dropbox/dotfiles/bin:$PATH"
 
-# use rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # defined safe binstubs on path
 export PATH=".git/safe/../../bin:$PATH"
