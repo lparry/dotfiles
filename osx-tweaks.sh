@@ -191,3 +191,7 @@ chflags nohidden ~/Library
 
 # Kill affected applications
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
+
+# Make it possible to run a macbook with the lid open without the screen on when using an external screen
+# (like in 10.6)
+sudo nvram boot-args="iog=0x0"
