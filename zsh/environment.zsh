@@ -37,7 +37,7 @@ export BUNDLE_PATH=vendor/bundle-$(hostname)
 export PATH="/usr/local/bin:$PATH"
 
 # use gnu coreutils where available
-if [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
+if (which brew > /dev/null) && [[ $? == 0 ]] && [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 fi
 

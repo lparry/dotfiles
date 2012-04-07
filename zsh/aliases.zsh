@@ -25,4 +25,6 @@ alias hg='nocorrect hg'
 
 alias cap_shell='cap shell ROLES=web_app'
 
-alias git=hub
+if (which hub > /dev/null) && [[ $? == 0 ]]; then
+  alias git=hub
+fi

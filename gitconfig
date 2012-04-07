@@ -38,7 +38,6 @@
   default = current
 [core]
   excludesfile = /Users/lparry/.gitignore
-  editor = /usr/local/bin/vim
 [rerere]
   enabled = true
 [diff]
