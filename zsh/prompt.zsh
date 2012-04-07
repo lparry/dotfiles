@@ -12,7 +12,9 @@ function rbenv_part {
 }
 
 function branch_part {
-  echo "%{$grey%}#%{$fg[yellow]%}$(current_branch)%{$reset_color%}"
+  if [[ "$(current_branch)" != "" ]]; then
+    echo "%{$grey%}#%{$fg[yellow]%}$(current_branch)%{$reset_color%}"
+  fi
 }
 
 function git_dirty_status {
