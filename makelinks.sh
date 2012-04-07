@@ -19,3 +19,6 @@ ln -s ~/Dropbox/dotfiles/zsh       ~/.zsh
 ln -s ~/Dropbox/dotfiles/zshrc     ~/.zshrc
 
 ln -s ~/Dropbox/dotfiles/bin       ~/bin
+
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting
+
