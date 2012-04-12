@@ -22,6 +22,7 @@ if (which gsed > /dev/null) && [[ $? == 0 ]]; then
 fi
 
 alias hg='nocorrect hg'
+alias cap='nocorrect cap'
 
 alias cap_shell='cap shell ROLES=web_app'
 
