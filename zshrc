@@ -38,9 +38,6 @@ source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlight
 
 
 
-if (which rbenv > /dev/null) && [[ $? == 0 ]]; then
-  eval "$(rbenv init -)"
-fi
 
 if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
   fortune | cowrand | lolcat
