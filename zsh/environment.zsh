@@ -31,7 +31,7 @@ export RUBY_HEAP_FREE_MIN=500000
 #export RUBY_HEAP_FREE_MIN=500
 
 # unique bundle_path for each host
-export BUNDLE_PATH=vendor/bundle-$(hostname)
+export BUNDLE_PATH=vendor/bundle-$(hostname -s)
 
 # Prefer /usr/local/
 export PATH="/usr/local/bin:$PATH"
