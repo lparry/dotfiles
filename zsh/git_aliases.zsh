@@ -9,7 +9,7 @@ function git_merge_and_amend {
 }
 
 function current_remote {
-  echo ${${$(git config remote.origin.url)#*github.com:}%.*}
+  echo ${${$(git config remote.origin.url)#*github.com[/:]}%.*}
 }
 
 function github_link {
