@@ -29,3 +29,5 @@ alias cap_shell='cap shell ROLES=web_app'
 if (which hub > /dev/null) && [[ $? == 0 ]]; then
   alias git=hub
 fi
+
+alias sc='script/console'
