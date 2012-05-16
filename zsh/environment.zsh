@@ -41,7 +41,7 @@ if (which brew > /dev/null) && [[ $? == 0 ]] && [ -d "$(brew --prefix coreutils)
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 fi
 
-export PATH="$HOME/bin:$HOME/Dropbox/dotfiles/bin:$PATH"
+export PATH="$HOME/bin:$HOME/Dropbox/dotfiles/bin:/usr/local/sbin:$PATH"
 
 # defined safe binstubs on path
 export PATH=".git/safe/../../bin:$PATH"
