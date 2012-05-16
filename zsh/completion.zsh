@@ -45,3 +45,8 @@ compdef _git gl=git-log
 compdef _git glc=git-log
 compdef _git glcg=git-log
 compdef hub=git
+
+
+# Make up arrow search backwards in history
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
