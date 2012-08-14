@@ -32,9 +32,13 @@ function lucas_prompt {
   echo -n "$(short_pwd) %{$grey%}[%{$reset_color%}$(rbenv_part)$(branch_part)$(host_part)%{$grey%}]%{$reset_color%}$(git_dirty_status)"
 }
 
+function set_tab_title {
+  tabtitle `basename $(pwd)`
+}
+
 setopt prompt_subst
 
 #this is causing problems on tab completion :(
-PROMPT='%(?,%{$fg[green]%},%{$fg[red]%})⚡%{$fg[white]%} '
+PROMPT='%(?,%{$fg[green]%},%{$fg[red]%})⚡%{$fg[white]%} $(set_tab_title)'
 #PROMPT='⚡ '
 RPROMPT='$(lucas_prompt)'

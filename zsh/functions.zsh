@@ -34,3 +34,6 @@ function ssh-agent() {
   eval `command ssh-agent`
   ssh-add
 }
+
+tabtitle () { echo -ne "\033]0;$@\\007"; }
+
