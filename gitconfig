@@ -25,8 +25,6 @@
   autosetupmerge = true
 [alias]
   ignored = "!git ls-files --others --exclude-standard"
-  st = status
-  co = checkout
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
@@ -42,8 +40,6 @@
   enabled = true
 [diff]
   #external = /Users/lparry/opendiff-git.sh
-[github]
-  user = lparry
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -52,3 +48,5 @@
 	trustExitCode = true
 [credential]
 	helper = osxkeychain
+[web]
+	browser = open

@@ -15,8 +15,7 @@ git_dirty() {
 # Usage example: git pull origin $(current_branch)
 #
 function current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
+  git symbolic-ref -q --short HEAD 2> /dev/null
 }
 
 #compare the provided version of git to the version installed and on path

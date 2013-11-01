@@ -21,17 +21,23 @@ export ACK_OPTIONS="--smart-case --nosql --type-set cucumber=.feature --type-set
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-# ruby tuning
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-#export RUBY_GC_MALLOC_LIMIT=64000000
-export RUBY_HEAP_FREE_MIN=500000
-#export RUBY_HEAP_FREE_MIN=500
+# # ruby tuning
+# export RUBY_HEAP_MIN_SLOTS=1000000
+# export RUBY_HEAP_SLOTS_INCREMENT=1000000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# #export RUBY_GC_MALLOC_LIMIT=1000000000
+# export RUBY_GC_MALLOC_LIMIT=500000000
+# #export RUBY_GC_MALLOC_LIMIT=64000000
+# export RUBY_HEAP_FREE_MIN=500000
+# #export RUBY_HEAP_FREE_MIN=500
+
+export RUBY_HEAP_MIN_SLOTS=500000
+export RUBY_GC_MALLOC_LIMIT=80000000
+export RUBY_FREE_MIN=100000
+export USE_JASMINE_RAKE=true
 
 # unique bundle_path for each host
-export BUNDLE_PATH=vendor/bundle-$(hostname -s)
+#export BUNDLE_PATH=vendor/bundle-$(hostname -s)
 
 # Prefer /usr/local/
 export PATH="/usr/local/bin:$PATH"
@@ -45,3 +51,8 @@ export PATH="$HOME/bin:$HOME/Dropbox/dotfiles/bin:/usr/local/sbin:$PATH"
 
 # defined safe binstubs on path
 export PATH=".git/safe/../../bin:$PATH"
+
+
+autoload -U zmv
+alias mmv='noglob zmv -W'
+export BETTER_ERRORS_EDITOR="macvim"

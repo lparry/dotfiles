@@ -1,26 +1,23 @@
 #!/bin/sh
-rm ~/.ackrc
-rm ~/.gemrc
-rm ~/.gitconfig
-rm ~/.gitignore
-rm ~/.inputrc
-rm ~/.irbrc
-rm ~/.screenrc
-rm ~/.zsh
-rm ~/.zshrc
-ln -s ~/Dropbox/dotfiles/ackrc     ~/.ackrc
-ln -s ~/Dropbox/dotfiles/gemrc     ~/.gemrc
-ln -s ~/Dropbox/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/Dropbox/dotfiles/gitignore ~/.gitignore
-ln -s ~/Dropbox/dotfiles/inputrc   ~/.inputrc
-ln -s ~/Dropbox/dotfiles/irbrc     ~/.irbrc
-ln -s ~/Dropbox/dotfiles/screenrc  ~/.screenrc
-ln -s ~/Dropbox/dotfiles/zsh       ~/.zsh
-ln -s ~/Dropbox/dotfiles/zshrc     ~/.zshrc
+ln -sTf ~/Dropbox/dotfiles/ackrc     ~/.ackrc
+ln -sTf ~/Dropbox/dotfiles/gemrc     ~/.gemrc
+ln -sTf ~/Dropbox/dotfiles/gitconfig ~/.gitconfig
+ln -sTf ~/Dropbox/dotfiles/gitignore ~/.gitignore
+ln -sTf ~/Dropbox/dotfiles/inputrc   ~/.inputrc
+ln -sTf ~/Dropbox/dotfiles/irbrc     ~/.irbrc
+ln -sTf ~/Dropbox/dotfiles/screenrc  ~/.screenrc
+ln -sTf ~/Dropbox/dotfiles/zshrc     ~/.zshrc
 
-if [ ! -d ~/bin ]; then
-  ln -s ~/Dropbox/dotfiles/bin       ~/bin
-fi
+# directories
+rm -rf                             ~/.zsh
+ln -s ~/Dropbox/dotfiles/zsh       ~/.zsh
+rm -rf                             ~/.bundle
+ln -s ~/Dropbox/dotfiles/bundle    ~/.bundle
+rm -rf                             ~/.js
+ln -s ~/Dropbox/dotfiles/dotjs     ~/.js
+rm -rf                             ~/bin
+ln -s ~/Dropbox/dotfiles/bin       ~/bin
+
 
 if [ ! -d ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting ]; then
   git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting

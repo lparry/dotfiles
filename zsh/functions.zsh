@@ -7,6 +7,10 @@ function git_status_if_git_dir() {
   fi
 }
 
+function freshen_ctags {
+  ctags -R app/* config/* lib/*
+}
+
 # make rails migration and edit the file
 function migration {
   migration_file=`script/generate migration $1 | tail -n1 | sed -e 's/create//' -e 's/ *//g'`

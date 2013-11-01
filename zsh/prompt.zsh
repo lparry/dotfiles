@@ -7,8 +7,12 @@ function short_pwd {
   echo "%{$fg[green]%}$trunc_pwd%{$reset_color%}"
 }
 
-function rbenv_part {
-  echo "%{$fg[blue]%}$(rbenv_prompt_info)%{$reset_color%}"
+function rubyversion_part {
+  ruby_prompt="$(echo $RUBY_ROOT|sed -e "s/.*\///")"
+  if [[ -z "$ruby_prompt" ]]; then
+    ruby_prompt="system-ruby"
+  fi
+  echo "%{$fg[blue]%}$ruby_prompt%{$reset_color%}"
 }
 
 function branch_part {
@@ -29,11 +33,11 @@ function git_dirty_status {
 
 
 function lucas_prompt {
-  echo -n "$(short_pwd) %{$grey%}[%{$reset_color%}$(rbenv_part)$(branch_part)$(host_part)%{$grey%}]%{$reset_color%}$(git_dirty_status)"
+  echo -n "$(short_pwd) %{$grey%}[%{$reset_color%}$(rubyversion_part)$(branch_part)$(host_part)%{$grey%}]%{$reset_color%}$(git_dirty_status)"
 }
 
 function set_tab_title {
-  tabtitle `basename $(pwd)`
+  tabtitle `basename "$(pwd)"`
 }
 
 setopt prompt_subst

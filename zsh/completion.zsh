@@ -26,8 +26,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 fpath=(~/.zsh/completion $fpath)
 
-#autoload -Uz compinit
-autoload -U compinit
+autoload -Uz compinit
 compinit -i
 
 compdef _git gco=git-checkout
@@ -45,6 +44,29 @@ compdef _git gl=git-log
 compdef _git glc=git-log
 compdef _git glcg=git-log
 compdef hub=git
+
+# hub tab-completion script for zsh.
+# This script complements the completion script that ships with git.
+#
+# vim: ft=zsh sw=2 ts=2 et
+
+# Autoload _git completion functions
+# if declare -f _git > /dev/null; then
+#   _git
+# fi
+
+if declare -f _git_commands > /dev/null; then
+  _hub_commands=(
+    'alias:show shell instructions for wrapping git'
+    'pull-request:open a pull request on GitHub'
+    'fork:fork origin repo on GitHub'
+    'create:create new repo on GitHub for the current project'
+    'browse:browse the project on GitHub'
+    'compare:open GitHub compare view'
+  )
+  # Extend the '_git_commands' function with hub commands
+  eval "$(declare -f _git_commands | sed -e 's/base_commands=(/base_commands=(${_hub_commands} /')"
+fi
 
 
 # Make up arrow search backwards in history

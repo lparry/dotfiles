@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+# hacky little script to format flickr html embeds so the titles work on my blog
+
+filename = ARGV[0]
+lines = File.readlines(filename)
+
+
+def get_title(line)
+  line.sub(/.* alt="([^"]*)".*/,'\1').chomp
+end
+
+def format_image(line)
+  %(<p class="centered">#{line.chomp}<br/>\n<em>#{get_title(line)}</em></p>)
+end
+
+def line_needs_formatting?(line)
+  #it's a flickr image link
+  line.match(/flickr\.com.*\.jpg"/) &&
+    #and we havent already formatted it
+    !line.include?(%(p class="centered">))
+end
+
+changes_made = false
+
+lines.map! do |line|
+  if line_needs_formatting?(line)
+    changes_made ||= true
+    format_image(line)
+  else
+    line
+  end
+end
+
+File.write(filename, lines.join) if changes_made
+

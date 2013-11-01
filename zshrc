@@ -22,6 +22,11 @@ unsetopt autocd                  # change to dirs without cd
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-2.1.0-preview1
+
+
 for config_file ($HOME/.zsh/plugins/*.zsh) source $config_file
 for config_file ($HOME/.zsh/*.zsh) source $config_file
 
@@ -36,10 +41,5 @@ for config_file ($HOME/.zsh/*.zsh) source $config_file
 source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-
-
-
-if [[ `hostname` == 'Lucas-i7-iMac.local' ]]; then
-  fortune | cowrand | lolcat
-fi
-
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

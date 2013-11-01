@@ -194,4 +194,4 @@ for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 
 
 # Make it possible to run a macbook with the lid open without the screen on when using an external screen
 # (like in 10.6)
-sudo nvram boot-args="iog=0x0"
+#sudo nvram boot-args="iog=0x0"

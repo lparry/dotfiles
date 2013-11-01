@@ -2,10 +2,11 @@ alias l='ls'
 alias ls='ls -GF --color=tty'
 alias ll='ls -lh'
 alias la='ls -a'
+alias ack="ag -S --nogroup"
 
 alias tree='tree -C'
 
-alias m='cd ~/dev/envato/marketplace'
+alias m='cd ~/Dropbox/travel-blog/'
 
 alias :q='exit'
 
@@ -23,6 +24,9 @@ fi
 
 alias hg='nocorrect hg'
 alias cap='nocorrect cap'
+alias rspec='nocorrect rspec'
+alias spec='nocorrect rspec'
+alias r='rails'
 
 alias cap_shell='cap shell ROLES=web_app'
 
