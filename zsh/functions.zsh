@@ -18,7 +18,7 @@ function migration {
 }
 
 function cd() {
-  builtin cd "$@" && ls && git_status_if_git_dir
+  builtin cd "$@" && (git_status_if_git_dir; ls)
 }
 
 function git-branch-owners() {

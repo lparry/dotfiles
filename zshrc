@@ -24,7 +24,7 @@ unsetopt autocd                  # change to dirs without cd
 
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.1.0-preview1
+chruby ruby-2.1.1
 
 
 for config_file ($HOME/.zsh/plugins/*.zsh) source $config_file

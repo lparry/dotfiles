@@ -3,10 +3,11 @@ alias ls='ls -GF --color=tty'
 alias ll='ls -lh'
 alias la='ls -a'
 alias ack="ag -S --nogroup"
+alias irb='pry --simple-prompt'
 
 alias tree='tree -C'
 
-alias m='cd ~/Dropbox/travel-blog/'
+alias m='cd ~/dev/travel-blog/'
 
 alias :q='exit'
 
