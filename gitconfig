@@ -1,11 +1,11 @@
 [user]
-  email = lucas@envato.com
+  email = lparry@gmail.com
   name = Lucas Parry
 [color]
   branch = auto
   diff = auto
   status = auto
-  ui = always
+	ui = 1
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -50,3 +50,7 @@
 	helper = osxkeychain
 [web]
 	browser = open
+[help]
+	autocorrect = 1
+[diff]
+	algorithm = patience
