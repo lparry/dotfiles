@@ -1,4 +1,5 @@
 tags
 .cap_tasks~
 .rake_tasks~
+/binstubs/
 
