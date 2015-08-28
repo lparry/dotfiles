@@ -5,7 +5,7 @@ ln -sTf ~/Dropbox/dotfiles/gitconfig ~/.gitconfig
 ln -sTf ~/Dropbox/dotfiles/gitignore ~/.gitignore
 ln -sTf ~/Dropbox/dotfiles/inputrc   ~/.inputrc
 ln -sTf ~/Dropbox/dotfiles/irbrc     ~/.irbrc
-ln -sTf ~/Dropbox/dotfiles/screenrc  ~/.screenrc
+ln -sTf ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
 ln -sTf ~/Dropbox/dotfiles/zshrc     ~/.zshrc
 
 # directories
