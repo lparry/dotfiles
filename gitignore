@@ -4,3 +4,4 @@ tags
 /binstubs/
 /vendor/bundle/
 .env
+.netrwhist
