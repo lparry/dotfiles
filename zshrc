@@ -43,3 +43,5 @@ source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlight
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+echo 'set docker env: eval "$(docker-machine env dev)"'
