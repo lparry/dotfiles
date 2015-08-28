@@ -17,6 +17,7 @@ alias du='du -k --max-depth=1 $argv'
 
 alias ss='bin/unicorn_rails --config-file ~/.unicorn.rb'
 alias cucumber='cucumber -r features'
+alias rake="bundle exec rake"
 
 
 if (which gsed > /dev/null) && [[ $? == 0 ]]; then

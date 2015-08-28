@@ -8,7 +8,7 @@ function git_status_if_git_dir() {
 }
 
 function freshen_ctags {
-  ctags -R app/* config/* lib/*
+  /usr/local/bin/ctags -R app/* config/* lib/*
 }
 
 # make rails migration and edit the file
