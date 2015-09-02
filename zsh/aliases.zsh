@@ -37,3 +37,7 @@ if (which hub > /dev/null) && [[ $? == 0 ]]; then
 fi
 
 alias sc='script/console'
+
+# strip formatting from the clipboard
+alias pbclean='pbpaste | pbcopy'
+
