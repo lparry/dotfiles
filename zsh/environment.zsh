@@ -1,16 +1,14 @@
 export WORDCHARS='*?_[]~=&;!#$%^(){}'
 
-if [ -f "/usr/local/bin/vim" ]; then
+if [ -f "/usr/local/bin/nvim" ]; then
+  export EDITOR=/usr/local/bin/nvim
+elif [ -f "/usr/local/bin/vim" ]; then
   export EDITOR='/usr/local/bin/vim'
 elif [ -f "/usr/bin/vim" ]; then
   export EDITOR='/usr/bin/vim'
 fi
 
-#export MANPATH="/usr/local/share/man:/usr/X11/man:/usr/share/man"
-
 export TERM=xterm-256color
-
-export NUM_SWARM_DRONES=8
 
 export local_development_domain=".dev"
 
@@ -21,24 +19,10 @@ export ACK_OPTIONS="--smart-case --nosql --type-set cucumber=.feature --type-set
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-# unique bundle_path for each host
-#export BUNDLE_PATH=vendor/bundle-$(hostname -s)
 # parallel bundle install
 BUNDLE_JOBS=4
 
-# Prefer /usr/local/
-export PATH="/usr/local/bin:$PATH"
 
-# use gnu coreutils where available
-if (which brew > /dev/null) && [[ $? == 0 ]] && [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-fi
-
-export PATH="$HOME/bin:$HOME/Dropbox/dotfiles/bin:/usr/local/sbin:$PATH"
-
-# defined safe binstubs on path
-export CHRUBY_PATH_PREFIX=".git/safe/../../binstubs"
-export PATH="$CHRUBY_PATH_PREFIX:$PATH"
 
 
 autoload -U zmv
@@ -49,6 +33,29 @@ export BETTER_ERRORS_EDITOR="macvim"
 export BUNDLE_JOBS=4
 
 
+
+# export DOCKER_TLS_VERIFY="1"
+# export DOCKER_HOST="tcp://192.168.152.129:2376"
+# export DOCKER_CERT_PATH="/Users/lparry/.docker/machine/machines/docker-fusion"
+# export DOCKER_MACHINE_NAME="docker-fusion"
+
+export USE_CHRUBY=1
+
+# Elements node tests
+#export PHANTOMJS_BIN=/usr/local/bin/phantomjs
+# export PREFERRED_KARMA_BROWSER="Firefox"
+
 unalias run-help
 autoload run-help
 export HELPDIR=/usr/local/share/zsh/helpfiles
+
+export DEV_MODE_SIGNIN="true"
+export DONT_BUG_ME="true"
+#export NIGHTWATCH_BROWSER="firefox"
+export EAGER_LOAD_RAILS="true"
+
+export ELASTICSEARCH_TEST_PORT=9200
+export DONT_START_ELASTICSEARCH=true
+
+export SSO_WEB_PORT=6601
+export SSO_MAILCATCHER_PORT=9999

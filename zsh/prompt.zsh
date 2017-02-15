@@ -2,22 +2,38 @@ autoload colors; colors;
 grey='\e[0;90m'
 
 #replaces /Users/NAME with ~, compacts dirnames down to 1 letter for parent directories
-function short_pwd {
-  trunc_pwd=$(pwd|sed -e "s:^/Users/$(whoami):~:" -e "s:^/home/$(whoami):~:" -e 's:\(\.\{0,1\}[^/]\)[^/]*/:\1/:g')
-  echo "%{$fg[green]%}$trunc_pwd%{$reset_color%}"
+function color_short_pwd {
+  echo "$fg[green]$(short_pwd)$reset_color"
 }
 
+function short_pwd {
+  trunc_pwd=$(pwd|sed -e "s:^/Users/$(whoami):~:" -e "s:^/home/$(whoami):~:" -e 's:\(\.\{1,3\}[^/]\)[^/]*/:\1/:g')
+  echo "$trunc_pwd"
+}
+
+function color_rubyversion_part {
+   echo "$fg[blue]$(rubyversion_part)$reset_color"
+}
 function rubyversion_part {
-  ruby_prompt="$(echo $RUBY_ROOT|sed -e "s/.*\///")"
+  ruby_prompt=$RUBY_VERSION
   if [[ -z "$ruby_prompt" ]]; then
     ruby_prompt="system-ruby"
+  else
+    ruby_prompt=$(echo $RUBY_ROOT|sed -e "s/.*\///")
   fi
-  echo "%{$fg[blue]%}$ruby_prompt%{$reset_color%}"
+  echo "$ruby_prompt"
+}
+
+function color_node_version_part {
+   echo "$fg[yellow]$(node_version_part)$reset_color"
+}
+function node_version_part {
+  echo "node-$(node -v|sed -e "s/v//")"
 }
 
 function branch_part {
   if [[ "$(current_branch)" != "" ]]; then
-    echo "%{$grey%}#%{$fg[yellow]%}$(current_branch)%{$reset_color%}"
+    echo "($fg[yellow]$(current_branch)$reset_color)"
   fi
 }
 
@@ -33,7 +49,7 @@ function git_dirty_status {
 
 
 function lucas_prompt {
-  echo -n "$(short_pwd) %{$grey%}[%{$reset_color%}$(rubyversion_part)$(branch_part)$(host_part)%{$grey%}]%{$reset_color%}$(git_dirty_status)"
+  echo -n "$(color_short_pwd) %{$grey%}[%{$reset_color%}$(rubyversion_part)$(branch_part)$(host_part)%{$grey%}]%{$reset_color%}$(git_dirty_status)"
 }
 
 function set_tab_title {
@@ -42,7 +58,9 @@ function set_tab_title {
 
 setopt prompt_subst
 
-#this is causing problems on tab completion :(
-PROMPT='%(?,%{$fg[green]%},%{$fg[red]%})⚡%{$fg[white]%} $(set_tab_title)'
-#PROMPT='⚡ '
-RPROMPT='$(lucas_prompt)'
+precmd() { echo ""; echo "$(color_short_pwd) $(branch_part)[$(color_rubyversion_part)/$(color_node_version_part)]" }
+#prompt='%(?,%{$fg[green]%},%{$fg[red]%})⚡%{$fg[white]%} '
+prompt='%(?,⚡,❌) '
+#RPROMPT='$(lucas_prompt)'
+RPROMPT='$(set_tab_title)
+'

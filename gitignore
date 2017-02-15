@@ -1,7 +1,7 @@
-tags
 .cap_tasks~
-.rake_tasks~
+.rake_tasks
 /binstubs/
 /vendor/bundle/
 .env
 .netrwhist
+.tern-project

@@ -22,13 +22,18 @@ unsetopt autocd                  # change to dirs without cd
 # setopt interactivecomments     # escape commands so i can use them later
 # setopt recexact                # recognise exact, ambiguous matches
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.1.2
+# iTerm2v3 integration
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-
-for config_file ($HOME/.zsh/plugins/*.zsh) source $config_file
-for config_file ($HOME/.zsh/*.zsh) source $config_file
+for config_file ($HOME/.zsh/plugins/**/*.zsh) source $config_file
+source "$HOME/.zsh/aliases.zsh"
+source "$HOME/.zsh/environment.zsh"
+source "$HOME/.zsh/functions.zsh"
+source "$HOME/.zsh/git_aliases.zsh"
+source "$HOME/.zsh/prompt.zsh"
+source "$HOME/.zsh/secrets.zsh"
+source "$HOME/.zsh/completion.zsh"
+source "$HOME/.zsh/rake-fast.zsh"
 
 
 #bindkey '[D' emacs-backward-word
@@ -40,8 +45,36 @@ for config_file ($HOME/.zsh/*.zsh) source $config_file
 
 source ~/Dropbox/dotfiles/git-repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+#echo 'set docker env: eval "$(docker-machine env dev)"'
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+ln -sf /usr/local/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
 
-echo 'set docker env: eval "$(docker-machine env dev)"'
+# use gnu coreutils where available
+if (which brew > /dev/null) && [[ $? == 0 ]] && [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
+
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
+source ~/.zshenv
+
+
+# RUBY
+export DEFAULT_RUBY_VERSION="2.3.3"
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source ~/bin/chruby-auto.sh
+chruby $DEFAULT_RUBY_VERSION
+
+# node
+export NVM_DIR=~/.nvm
+source /usr/local/opt/nvm/nvm.sh --no-use 2> /dev/null
+nvm use --delete-prefix v6.9.5
+echo "Using yarn $(yarn --version)"
+
+alias foreman=forego
+alias vim=emacs
+
+function npm() {
+  echo "dont you mean yarn $*"
+  echo "automatically running yarn $* in 10 seconds..."
+  sleep 10
+  yarn $*
+}

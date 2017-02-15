@@ -27,9 +27,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 fpath=(~/.zsh/completion $fpath)
 
 autoload -Uz compinit
-compinit -i
+compinit -u
 
-compdef _git gco=git-checkout
+# if these break `brew uninstall --force git && brew install git --without-completions`
+compdef _git gco_fancy=git-checkout
 compdef _git gm=git-merge
 compdef _git g=git-status
 compdef _git ga=git-add

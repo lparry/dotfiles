@@ -5,7 +5,7 @@
   branch = auto
   diff = auto
   status = auto
-	ui = 1
+  ui = 1
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -37,21 +37,34 @@
 [core]
   excludesfile = /Users/lparry/.gitignore
   whitespace = trailing-space,space-before-tab
+  pager = diff-so-fancy | less --tabs=1,5 -R
+  #pager = zsh -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [rerere]
   enabled = true
 [diff]
   #external = /Users/lparry/opendiff-git.sh
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [web]
-	browser = open
+  browser = open
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [diff]
-	algorithm = patience
+  algorithm = patience
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[branch "master"]
+  mergeoptions = --no-ff

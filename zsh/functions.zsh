@@ -76,19 +76,47 @@ iterm2_print_user_vars() {
   iterm2_set_user_var shortPwd $(short_pwd)
 }
 
-function elements-backend() {
-  command cd /Users/lparry/dev/elements/elements-backend &&
-  $(aws-keys env elements-staging) && \
-    CLOUDINARY_CLOUD_NAME='envato-elements-staging' \
-    CLOUDINARY_API_KEY=$(security find-generic-password -a cloudinary -s cloudinary_api_key -w  envato.keychain) \
-    CLOUDINARY_API_SECRET=$(security find-generic-password -a cloudinary -s cloudinary_api_secret -w  envato.keychain) \
-    bundle exec rails server -p 5000
-}
-
 function db-from-scratch()
 {
-  rake db:migrate:reset
-  rake db:seed
+  redis-cli flushall
+  rake db:migrate:reset db:seed
+}
+
+function db-from-production()
+{
+  redis-cli flushall
+  script/restore_prod_to_local_db.sh
+  rake db:migrate db:seed
+  curl -X DELETE http://localhost:9200/_all
+  redis-cli flushall
+}
+
+
+function _keychain() {
+  keychain="envato.keychain"
+  service="elements-development"
+  key=${1}
+  security find-generic-password -a $service -s $key -w $keychain
+}
+
+function _keychain_hex() {
+  _keychain $1 | perl -pe 's/([0-9a-f]{2})/chr hex $1/gie'
+}
+
+function elements-backend() {
+  elements-environment bundle exec rails server -p 5000 -b 0.0.0.0
+}
+
+function s() {
+  ack "$*"
+}
+
+function ackv() {
+  ack $* -l|xargs vim
 }
 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+function elements-backend() {
+  heroku $* --app elements-backend
+}

@@ -1,12 +1,12 @@
 #!/bin/sh
-ln -sTf ~/Dropbox/dotfiles/ackrc     ~/.ackrc
-ln -sTf ~/Dropbox/dotfiles/gemrc     ~/.gemrc
-ln -sTf ~/Dropbox/dotfiles/gitconfig ~/.gitconfig
-ln -sTf ~/Dropbox/dotfiles/gitignore ~/.gitignore
-ln -sTf ~/Dropbox/dotfiles/inputrc   ~/.inputrc
-ln -sTf ~/Dropbox/dotfiles/irbrc     ~/.irbrc
-ln -sTf ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
-ln -sTf ~/Dropbox/dotfiles/zshrc     ~/.zshrc
+ln -sf ~/Dropbox/dotfiles/ackrc     ~/.ackrc
+ln -sf ~/Dropbox/dotfiles/gemrc     ~/.gemrc
+ln -sf ~/Dropbox/dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/Dropbox/dotfiles/gitignore ~/.gitignore
+ln -sf ~/Dropbox/dotfiles/inputrc   ~/.inputrc
+ln -sf ~/Dropbox/dotfiles/irbrc     ~/.irbrc
+ln -sf ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
+ln -sf ~/Dropbox/dotfiles/zshrc     ~/.zshrc
 
 # directories
 rm -rf                             ~/.zsh
@@ -27,3 +27,4 @@ if [ ! -d ~/Dropbox/vimfiles ]; then
   git clone http://lparry@github.com/lparry/vimfiles.git ~/Dropbox/vimfiles
 fi
 
+chflags nohidden ~/Library
