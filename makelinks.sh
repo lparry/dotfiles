@@ -7,6 +7,7 @@ ln -sf ~/Dropbox/dotfiles/inputrc   ~/.inputrc
 ln -sf ~/Dropbox/dotfiles/irbrc     ~/.irbrc
 ln -sf ~/Dropbox/dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/Dropbox/dotfiles/zshrc     ~/.zshrc
+ln -sf ~/Dropbox/dotfiles/spacemacs ~/.spacemacs
 
 # directories
 rm -rf                             ~/.zsh
